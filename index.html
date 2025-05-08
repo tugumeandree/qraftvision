@@ -19,120 +19,54 @@
       background-color: #f4f4f4;
       color: #222;
     }
+  
     header {
       background: #0a0a23;
       color: white;
       padding: 2rem;
       text-align: center;
     }
+  
     nav {
       background: #222;
       padding: 1rem;
       display: flex;
       justify-content: center;
       gap: 2rem;
+      flex-wrap: wrap; /* Allow wrapping on smaller screens */
     }
+  
     nav a {
       color: white;
       text-decoration: none;
       font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
     }
+  
     nav a:hover, nav a.active {
-      text-decoration: underline;
+      background-color: #4caf50;
+      color: white;
     }
+  
     section {
       padding: 4rem 2rem;
       max-width: 1200px;
       margin: auto;
     }
-    h1 {
-      color: white;
+  
+    h1, h2 {
       text-align: center;
     }
-    h2 {
-      color: #0a0a23;
-      text-align: center;
-    }
+  
     footer {
       background: #0a0a23;
       color: white;
       padding: 1rem;
       text-align: center;
     }
-
-    /* Card Styles */
-    .card {
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 1.5rem;
-      background: #fafafa;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-      text-align: center;
-    }
-    .card img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
-    .card-title {
-      font-size: 1.5em;
-      margin: 10px 0;
-    }
-
-    /* Layout Styles */
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-    .cta-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 1rem;
-    }
-    .cta-buttons button {
-      background: #4caf50;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    .cta-buttons button:hover {
-      background: #388e3c;
-    }
-
-    /* Specific Styles */
-    .spaces, .pillars, .economies {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .space-card {
-      background-color: #e0e0e0;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    }
-    .economies .card {
-      color: white;
-    }
-    .care-economy { background-color: #4caf50; }
-    .gig-economy { background-color: #f6b93b; }
-    .digital-economy { background-color: #2196f3; }
-    .knowledge-economy { background-color: #3f51b5; }
-    .innovation-economy { background-color: #e91e63; }
-    .creative-economy { background-color: #ff9800; }
-  </style>
-  <style>
-    .navigation img {
-      height: 50px; /* Adjust the height */
-      width: auto; /* Maintain aspect ratio */
-    }
-  </style>
-  <style>
+  
     /* Card Styles */
     .card {
       border: 1px solid #ddd;
@@ -145,25 +79,34 @@
       flex-direction: column;
       justify-content: space-between;
     }
+  
     .card img {
-    width: 100%; /* Make the image span the full width of the card */
-    height: 200px; /* Set a fixed height for consistency */
-    object-fit: cover; /* Ensures the image fits nicely without distortion */
-    border-radius: 10px; /* Matches the card's border radius */
-    margin-bottom: 10px;
-  }
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+  
     .card-title {
       font-size: 1.5em;
       margin: 10px 0;
     }
   
-    /* Button Styles */
+    /* Layout Styles */
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+  
     .cta-buttons {
       display: flex;
       flex-direction: column;
       gap: 10px;
       margin-top: 1rem;
     }
+  
     .cta-buttons button {
       background: #4caf50;
       color: white;
@@ -172,78 +115,19 @@
       border-radius: 5px;
       cursor: pointer;
       transition: background 0.3s ease;
-      font-size: 1rem;
     }
+  
     .cta-buttons button:hover {
       background: #388e3c;
     }
-  </style>
-  <style>
-    /* Navigation Styles */
-    .course-nav {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-    .course-nav a {
-      text-decoration: none;
-      color: #0a0a23;
-      font-weight: bold;
-      padding: 0.5rem 1rem;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      transition: background-color 0.3s, color 0.3s;
-    }
-    .course-nav a.active, .course-nav a:hover {
-      background-color: #4caf50;
-      color: white;
-    }
   
-    /* Courses Container */
-    .courses-container {
+    /* Spaces and Economies Layout */
+    .spaces, .economies {
       display: grid;
-      gap: 2rem;
-    }
-  
-    /* Individual Courses */
-    .courses {
-      display: none;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+      gap: 20px;
     }
-    .courses.active {
-      display: grid;
-    }
-    .course {
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 1rem;
-      background: #fafafa;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-    .course h3 {
-      margin: 0.5rem 0;
-      color: #0a0a23;
-    }
-    .course p {
-      margin: 0.5rem 0 1rem;
-      color: #555;
-    }
-    .course a {
-      text-decoration: none;
-      color: white;
-      background: #4caf50;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
-    .course a:hover {
-      background: #388e3c;
-    }
-  </style>
-  <style>
+  
     /* Navigation Styles for Courses Section */
     .course-nav {
       display: flex;
@@ -252,27 +136,166 @@
       gap: 1rem;
       margin-bottom: 2rem;
     }
+  
     .course-nav a {
       text-decoration: none;
       color: white;
       font-weight: bold;
-      padding: 0.8rem 1.5rem; /* Increased padding for better readability */
+      padding: 0.8rem 1.5rem;
       border: 1px solid #4caf50;
       border-radius: 5px;
-      background-color: #4caf50; /* Green background for buttons */
-      font-size: 1rem; /* Adjusted font size for readability */
+      background-color: #4caf50;
+      font-size: 1rem;
       transition: background-color 0.3s, color 0.3s;
       text-align: center;
-      white-space: nowrap; /* Prevents text from wrapping */
+      white-space: nowrap;
     }
+  
     .course-nav a:hover {
-      background-color: #388e3c; /* Darker green on hover */
+      background-color: #388e3c;
       color: white;
     }
+  
     .course-nav a.active {
-      background-color: #0a0a23; /* Dark background for active state */
+      background-color: #0a0a23;
       color: white;
       border-color: #0a0a23;
+    }
+  
+    /* Courses Container */
+    .courses-container {
+      display: grid;
+      gap: 2rem;
+    }
+  
+    .courses {
+      display: none;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+  
+    .courses.active {
+      display: grid;
+    }
+  
+    .course {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 1rem;
+      background: #fafafa;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+  
+    .course h3 {
+      margin: 0.5rem 0;
+      color: #0a0a23;
+    }
+  
+    .course p {
+      margin: 0.5rem 0 1rem;
+      color: #555;
+    }
+  
+    .course a {
+      text-decoration: none;
+      color: white;
+      background: #4caf50;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+  
+    .course a:hover {
+      background: #388e3c;
+    }
+  
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        padding: 1.5rem;
+      }
+  
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+  
+      .card img {
+        height: 150px; /* Reduce image height for smaller screens */
+      }
+  
+      .cta-buttons button {
+        font-size: 0.9rem; /* Adjust button font size */
+        padding: 8px 12px;
+      }
+  
+      .course-nav a {
+        font-size: 0.9rem; /* Adjust font size for smaller screens */
+        padding: 0.6rem 1rem;
+      }
+    }
+  
+    @media (max-width: 480px) {
+      .card img {
+        height: 120px; /* Further reduce image height for very small screens */
+      }
+  
+      .cta-buttons button {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+      }
+  
+      .course-nav a {
+        font-size: 0.8rem;
+        padding: 0.5rem 0.8rem;
+      }
+    }
+  </style>
+  <style>
+    /* Navigation Bar */
+    .navigation {
+      background-color: #222;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* Space between logo and links */
+      position: fixed; /* Fix the navigation bar at the top */
+      top: 0;
+      width: 100%;
+      z-index: 1000; /* Ensure it stays above other elements */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    }
+  
+    /* Logo */
+    .navigation img {
+      height: 50px; /* Adjust the logo size */
+      width: auto; /* Maintain aspect ratio */
+    }
+  
+    /* Navigation Links */
+    .navigation nav {
+      display: flex;
+      gap: 1rem;
+    }
+  
+    .navigation nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+  
+    .navigation nav a:hover, .navigation nav a.active {
+      background-color: #4caf50;
+      color: white;
+    }
+  
+    /* Add padding to the body to prevent content from overlapping the fixed navbar */
+    body {
+      padding-top: 80px; /* Adjust based on the height of the navbar */
     }
   </style>
 </head>
@@ -280,8 +303,8 @@
 
   <!-- Navigation -->
   <div class="navigation">
+    <a href="#"><img src="/images/8.png" alt="Qraft Academy Logo"></a>
     <nav>
-      <a><img src="/images/8.png" alt="Qraft Academy Logo"></a>
       <a href="products.html">Products</a>
       <a href="spaces.html">Spaces</a>
       <a href="courses.html">Courses</a>
@@ -289,7 +312,7 @@
       <a href="projects.html">Projects</a>
       <a href="media.html">Media</a>
       <a href="about.html">About</a>
-      <a href="login.html">LOGIN</a>
+      <a href="login.html">Login</a>
     </nav>
   </div>
 
