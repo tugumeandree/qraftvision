@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qraft Academy</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #007BFF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        section {
+            padding: 20px;
+            margin: 10px 0;
+            background: white;
+            border-radius: 8px;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .feature-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+        .feature-card:hover {
+            transform: scale(1.05);
+        }
+        .economy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .economy-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+        .economy-card:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #007BFF;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to Qraft Academy</h1>
+        <p>Your Gateway to Innovation and Knowledge</p>
+        <a href="#contact" class="cta-button">Join Us Today</a>
+    </header>
+
+    <section id="about">
+        <h2>About Qraft Academy</h2>
+        <p>At Qraft Academy, we are dedicated to nurturing talent and fostering innovation through comprehensive training programs and workshops. Our mission is to empower individuals with the knowledge and skills needed to thrive in the modern economy.</p>
+    </section>
+
+    <section id="features">
+        <h2>Key Features of Qraft Academy</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Expert-Led Courses</h3>
+                <p>Learn from industry experts and gain practical knowledge in various fields.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Hands-On Workshops</h3>
+                <p>Participate in interactive workshops to apply what you've learned in real-world scenarios.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Networking Opportunities</h3>
+                <p>Connect with like-minded individuals and professionals to expand your network.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Flexible Learning</h3>
+                <p>Choose from online and in-person courses that fit your schedule and learning style.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Certification Programs</h3>
+                <p>Receive certifications that validate your skills and enhance your career prospects.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Ongoing Support</h3>
+                <p>Access resources and support even after completing your courses to ensure your continued growth.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="labs">
+        <h2>Qraft Labs</h2>
+        <p>Our Qraft Labs serve as a research and development hub where innovative ideas come to life. Collaborate with experts and peers to create impactful solutions.</p>
+        <a href="labs.html" class="cta-button">Explore Qraft Labs</a>
+    </section>
+
+    <section id="hub">
+        <h2>Qraft Solutions Hub</h2>
+        <p>The Qraft Solutions Hub connects businesses with innovative solutions tailored to their needs, fostering collaboration and growth.</p>
+        <a href="hub.html" class="cta-button">Discover Qraft Solutions Hub</a>
+    </section>
+
+    <section id="economies">
+        <h2>Our Services Across Six Dynamic Economies</h2>
+        <p>Driving Growth and Innovation in Diverse Sectors</p>
+        <div class="economy-grid">
+            <div class="economy-card">
+                <h3>Knowledge Economy</h3>
+                <p>We leverage knowledge and information to drive innovation and growth.</p>
+            </div>
+            <div class="economy-card">
+                <h3>Innovation Economy</h3>
+                <p>Fostering creativity and technological advancements for sustainable growth.</p>
+            </div>
+            <div class="economy-card">
+                <h3>Creative Economy</h3>
+                <p>Empowering artists and creators to transform ideas into impactful solutions.</p>
+            </div>
+            <div class="economy-card">
+                <h3>Digital Economy</h3>
+                <p>Harnessing technology to create new business models and opportunities.</p>
+            </div>
+            <div class="economy-card">
+                <h3>Gig Economy</h3>
+                <p>Connecting freelancers and businesses for flexible work solutions.</p>
+            </div>
+            <div class="economy-card">
+                <h3>Care Economy</h3>
+                <p>Providing essential services that enhance well-being and quality of life.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <h2>What Our Students Say</h2>
+        <p>"Qraft Academy transformed my career! The courses were insightful and the instructors were top-notch!" - Jane Doe</p>
+        <p>"The networking opportunities at Qraft Academy helped me land my dream job!" - John Smith</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Ready to take the next step in your learning journey? Get in touch with us!</p>
+        <form>
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 Qraft Academy. All rights reserved.</p>
+        <nav>
+            <a href="privacy.html" style="color:white;">Privacy Policy</a> |
+            <a href="terms.html" style="color:white;">Terms of Service</a>
+        </nav>
+    </footer>
+
+</body>
+</html>

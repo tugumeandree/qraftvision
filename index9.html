@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grow with Google Courses</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #4285f4;
+            color: white;
+            padding: 20px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            padding: 10px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        nav a.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        main {
+            display: flex;
+            padding: 20px;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar h3 {
+            margin-top: 0;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+
+        .courses {
+            flex-grow: 1;
+            margin-left: 20px;
+            display: none;
+        }
+
+        .courses.active {
+            display: block;
+        }
+
+        .course {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .course h3 {
+            margin-top: 0;
+        }
+
+        .course a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #4285f4;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="active">Productivity and Professional Development Courses</a>
+            <a href="#">Personal Development and Well-being Courses</a>
+            <a href="#">Leadership Development Courses</a>
+            <a href="#">Sustainability and Growth Courses</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="sidebar">
+            <h3>Filter by Topic</h3>
+            <ul>
+                <li>Job Search</li>
+                <li>Communication</li>
+                <li>Design</li>
+                <li>Digital Wellbeing</li>
+                <li>Productivity</li>
+                <li>Digital Marketing</li>
+                <li>Coding & Development</li>
+                <li>AI</li>
+                <li>Cloud Computing</li>
+                <li>Online Safety</li>
+                <li>Data & Analytics</li>
+                <li>Sell Online</li>
+                <li>Expand Internationally</li>
+            </ul>
+        </div>
+
+        <div class="courses active">
+            <div class="course">
+                <h3>Course Title 1</h3>
+                <p>Short description of the course.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div class="course">
+                <h3>Course Title 2</h3>
+                <p>Short description of the course.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div class="course">
+                <h3>Course Title 3</h3>
+                <p>Short description of the course.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <!-- Add more courses as needed -->
+        </div>
+
+        <div class="courses">
+            <div class="course">
+                <h3>Personal Development Course 1</h3>
+                <p>Short description of the course.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div class="course">
+                <h3>Personal Development Course 2</h3>
+                <p>Short description of the course.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div class="course">
+                <h3>Personal Development Course 3</h3>
+                <p>Short description of the course.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <!-- Add more courses as needed -->
+        </div>
+
+        <div class="courses">
+            <div class="course">
+                <h3>Leadership Course 1</h3>
+                <p>Short description of the course.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div class="course">
+                <h3>Leadership Course 2</h3>
+                <p>Short description of the course.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div class="course">
+                <h3>Leadership Course 3</h3>
+                <p>Short description of the course.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <!-- Add more courses as needed -->
+        </div>
+
+        <div class="courses">
+            <div class="course">
+                <h3>Sustainability Course 1</h3>
+                <p>Short description of the course.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div class="course">
+                <h3>Sustainability Course 2</h3>
+                <p>Short description of the course.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div class="course">
+                <h3>Sustainability Course 3</h3>
+                <p>Short description of the course.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <!-- Add more courses as needed -->
+        </div>
+    </main>
+
+    <script>
+        const navLinks = document.querySelectorAll('nav a');
+        const coursesContainers = document.querySelectorAll('.courses');
+
+        navLinks.forEach((link, index) => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                coursesContainers.forEach(c => c.classList.remove('active'));
+                coursesContainers[index].classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

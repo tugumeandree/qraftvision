@@ -3,98 +3,542 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Qraft Academy | Rata Qraft Solutions</title>
+  <title>Qraft Academy | Rata Qraft Solutions Ltd</title>
+  
+  <!-- Fonts and Materialize CSS -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  
   <style>
-    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: #222; }
-    header { background: #0a0a23; color: #fff; padding: 2rem; text-align: center; }
-    section { padding: 4rem 2rem; max-width: 1200px; margin: auto; }
-    h1, h2 { color: #0a0a23; }
-    .highlight { color: #4caf50; font-weight: bold; }
-    .programs, .pillars, .economies { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem; }
-    .card { border: 1px solid #ddd; border-radius: 10px; padding: 1.5rem; background: #fafafa; }
-    footer { background: #0a0a23; color: #fff; padding: 1rem; text-align: center; }
-    .cta-buttons { text-align: center; margin-top: 3rem; }
-    .cta-buttons button { background: #4caf50; color: #fff; border: none; padding: 1rem 2rem; margin: 0.5rem; border-radius: 8px; font-size: 1rem; cursor: pointer; transition: background 0.3s ease; }
-    .cta-buttons button:hover { background: #388e3c; }
+    /* General Styles */
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #222;
+    }
+    header {
+      background: #0a0a23;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    nav {
+      background: #222;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav a:hover, nav a.active {
+      text-decoration: underline;
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    h1 {
+      color: white;
+      text-align: center;
+    }
+    h2 {
+      color: #0a0a23;
+      text-align: center;
+    }
+    footer {
+      background: #0a0a23;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    /* Card Styles */
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 1.5rem;
+      background: #fafafa;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .card-title {
+      font-size: 1.5em;
+      margin: 10px 0;
+    }
+
+    /* Layout Styles */
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .cta-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 1rem;
+    }
+    .cta-buttons button {
+      background: #4caf50;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .cta-buttons button:hover {
+      background: #388e3c;
+    }
+
+    /* Specific Styles */
+    .spaces, .pillars, .economies {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .space-card {
+      background-color: #e0e0e0;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    .economies .card {
+      color: white;
+    }
+    .care-economy { background-color: #4caf50; }
+    .gig-economy { background-color: #f6b93b; }
+    .digital-economy { background-color: #2196f3; }
+    .knowledge-economy { background-color: #3f51b5; }
+    .innovation-economy { background-color: #e91e63; }
+    .creative-economy { background-color: #ff9800; }
+  </style>
+  <style>
+    .navigation img {
+      height: 50px; /* Adjust the height */
+      width: auto; /* Maintain aspect ratio */
+    }
+  </style>
+  <style>
+    /* Card Styles */
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 1.5rem;
+      background: #fafafa;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card img {
+    width: 100%; /* Make the image span the full width of the card */
+    height: 200px; /* Set a fixed height for consistency */
+    object-fit: cover; /* Ensures the image fits nicely without distortion */
+    border-radius: 10px; /* Matches the card's border radius */
+    margin-bottom: 10px;
+  }
+    .card-title {
+      font-size: 1.5em;
+      margin: 10px 0;
+    }
+  
+    /* Button Styles */
+    .cta-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 1rem;
+    }
+    .cta-buttons button {
+      background: #4caf50;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      font-size: 1rem;
+    }
+    .cta-buttons button:hover {
+      background: #388e3c;
+    }
+  </style>
+  <style>
+    /* Navigation Styles */
+    .course-nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .course-nav a {
+      text-decoration: none;
+      color: #0a0a23;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .course-nav a.active, .course-nav a:hover {
+      background-color: #4caf50;
+      color: white;
+    }
+  
+    /* Courses Container */
+    .courses-container {
+      display: grid;
+      gap: 2rem;
+    }
+  
+    /* Individual Courses */
+    .courses {
+      display: none;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .courses.active {
+      display: grid;
+    }
+    .course {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 1rem;
+      background: #fafafa;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .course h3 {
+      margin: 0.5rem 0;
+      color: #0a0a23;
+    }
+    .course p {
+      margin: 0.5rem 0 1rem;
+      color: #555;
+    }
+    .course a {
+      text-decoration: none;
+      color: white;
+      background: #4caf50;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .course a:hover {
+      background: #388e3c;
+    }
+  </style>
+  <style>
+    /* Navigation Styles for Courses Section */
+    .course-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap; /* Allows wrapping on smaller screens */
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .course-nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      padding: 0.8rem 1.5rem; /* Increased padding for better readability */
+      border: 1px solid #4caf50;
+      border-radius: 5px;
+      background-color: #4caf50; /* Green background for buttons */
+      font-size: 1rem; /* Adjusted font size for readability */
+      transition: background-color 0.3s, color 0.3s;
+      text-align: center;
+      white-space: nowrap; /* Prevents text from wrapping */
+    }
+    .course-nav a:hover {
+      background-color: #388e3c; /* Darker green on hover */
+      color: white;
+    }
+    .course-nav a.active {
+      background-color: #0a0a23; /* Dark background for active state */
+      color: white;
+      border-color: #0a0a23;
+    }
   </style>
 </head>
 <body>
+
+  <!-- Navigation -->
+  <div class="navigation">
+    <nav>
+      <a><img src="/images/8.png" alt="Qraft Academy Logo"></a>
+      <a href="products.html">Products</a>
+      <a href="spaces.html">Spaces</a>
+      <a href="courses.html">Courses</a>
+      <a href="programs.html">Programs</a>
+      <a href="projects.html">Projects</a>
+      <a href="media.html">Media</a>
+      <a href="about.html">About</a>
+      <a href="login.html">LOGIN</a>
+    </nav>
+  </div>
+
+  <!-- Header -->
   <header>
-    <h1>Qraft Academy</h1>
+    <h1>Welcome to Qraft Academy</h1>
     <p>Modern Workforce Development for the Future of Work</p>
-    <p><em>Learning, Working, and Achieving</em></p>
+    <p><em>We help you Learn, Work, and Achieve</em></p>
   </header>
 
+  <!-- Products Section -->
   <section>
-    <h2>About Qraft Academy</h2>
-    <p>Qraft Academy, a program by <strong>Rata Qraft Solutions</strong>, empowers entrepreneurs, freelancers, professionals, and investors with lifelong learning and development. We focus on developing <span class="highlight">mindset, skillset, and toolset</span> for success in the modern world of work.</p>
-    <p>Through Qraft Labs and Qraft Solutions Hub, we deliver content development and training, software development, talent development, funding, and modern workspaces for our community.</p>
-  </section>
-
-  <section>
-    <h2>Our Pillars</h2>
-    <div class="pillars">
-      <div class="card"><strong>Learning</strong><br>Skills Development (Data, Digital, and Design), Leadership & Business, Personal & Professional Growth</div>
-      <div class="card"><strong>Working</strong><br>Qraft Labs for innovation in 8 economies: care, experience, gig, trade, green/circular, digital, creative, and knowledge</div>
-      <div class="card"><strong>Achieving</strong><br>Through the Qraft Solutions Hub, members grow their network, net worth, and net weight via funding, branding, and outsourcing opportunities</div>
+    <h2>Products</h2>
+    <div class="container">
+      <div class="card">
+        <img src="/images/coursecreators.jpg" alt="CourseMasters Image">
+        <div class="card-title">CourseMasters</div>
+        <p>We design and develop engaging e-learning courses for clients and train content creators to produce professional-quality courses.</p>
+        <div class="cta-buttons">
+          <button>Apply to Learn Course Production</button>
+          <button>Get Your Course Developed</button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="/images/techmasters.jpg" alt="TechMasters Image">
+        <div class="card-title">TechMasters</div>
+        <p>Learn modern digital, design, and data skills to thrive in the AI revolution.</p>
+        <div class="cta-buttons">
+          <button>Apply to Learn a Technical Skill</button>
+          <button>Get Top Talent from Us</button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="/images/workmasters.jpeg" alt="WorkMasters Image">
+        <div class="card-title">WorkMasters</div>
+        <p>Work readiness apprenticeships, freelancing bootcamps, and employability programs to advance your career.</p>
+        <div class="cta-buttons">
+          <button>Open Apprenticeships</button>
+          <button>Join Freelancing Bootcamp</button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="/images/capitalmasters.jpg" alt="CapitalMasters Image">
+        <div class="card-title">CapitalMasters</div>
+        <p>We help entrepreneurs raise funding and prepare for their next funding round.</p>
+        <div class="cta-buttons">
+          <button>Apply to Learn Fundraising</button>
+          <button>Get Funding</button>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="cta-buttons">
-    <h2>Get Involved</h2>
-    <button onclick="window.location.href='https://example.com/apply-skills-course'">Apply as a Learner</button>
-    <button onclick="window.location.href='https://example.com/join-qraft-labs'">Join Qraft Labs as Innovator/Researcher</button>
-    <button onclick="window.location.href='https://example.com/join-hub'">Join Qraft Solutions Hub</button>
+  <!-- Spaces Section -->
+  <section>
+    <h2>Our Spaces</h2>
+    <div class="spaces">
+      <div class="card">
+        <img src="/images/qraft labs.jpg" alt="Qraft Labs Image">
+        <h3>Qraft Labs</h3>
+        <p>R&D engine supporting innovation across 8 economic frontiers.</p>
+        <div class="cta-buttons">
+          <button>Join Qraft Labs</button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="/images/qraftsolutionshub.jpg" alt="Qraft Solutions Hub Image">
+        <h3>Qraft Solutions Hub</h3>
+        <p>A vibrant center for coworking, events, and training sessions.</p>
+        <div class="cta-buttons">
+          <button>Join Qraft Solutions Hub</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Courses</h2>
+    <header>
+      <nav class="course-nav">
+        <a href="#"  class="active" data-category="productivity">Productivity & Professional Devnt</a>
+        <a href="#" data-category="personal">Personal Devnt & Well-being</a>
+        <a href="#" data-category="leadership">Leadership Devnt</a>
+        <a href="#"  data-category="sustainability">Sustainability & Growth</a>
+      </nav>
+    </header>
+  
+    <main class="courses-container">
+      <!-- Productivity Courses -->
+      <div class="courses active" data-category="productivity">
+        <div class="course">
+          <h3>Productivity Course Title 1</h3>
+          <p>Short description of the course.</p>
+          <a href="#">Learn More</a>
+        </div>
+        <div class="course">
+          <h3> Productivity Course Title 2</h3>
+          <p>Short description of the course.</p>
+          <a href="#">Learn More</a>
+        </div>
+        <div class="course">
+          <h3> Productivity Course Title 3</h3>
+          <p>Short description of the course.</p>
+          <a href="#">Learn More</a>
+        </div>
+      </div>
+  
+      <!-- Personal Development Courses -->
+      <div class="courses" data-category="personal">
+        <div class="course">
+          <h3>Personal Development Course 1</h3>
+          <p>Short description of the course.</p>
+          <a href="#">Learn More</a>
+        </div>
+        <div class="course">
+          <h3>Personal Development Course 2</h3>
+          <p>Short description of the course.</p>
+          <a href="#">Learn More</a>
+        </div>
+        <div class="course">
+          <h3>Personal Development Course 3</h3>
+          <p>Short description of the course.</p>
+          <a href="#">Learn More</a>
+        </div>
+      </div>
+  
+      <!-- Leadership Courses -->
+      <div class="courses" data-category="leadership">
+        <div class="course">
+          <h3>Leadership Course 1</h3>
+          <p>Short description of the course.</p>
+          <a href="#">Learn More</a>
+        </div>
+        <div class="course">
+          <h3>Leadership Course 2</h3>
+          <p>Short description of the course.</p>
+          <a href="#">Learn More</a>
+        </div>
+        <div class="course">
+          <h3>Leadership Course 3</h3>
+          <p>Short description of the course.</p>
+          <a href="#">Learn More</a>
+        </div>
+      </div>
+  
+      <!-- Sustainability Courses -->
+      <div class="courses" data-category="sustainability">
+        <div class="course">
+          <h3>Sustainability Course 1</h3>
+          <p>Short description of the course.</p>
+          <a href="#">Learn More</a>
+        </div>
+        <div class="course">
+          <h3>Sustainability Course 2</h3>
+          <p>Short description of the course.</p>
+          <a href="#">Learn More</a>
+        </div>
+        <div class="course">
+          <h3>Sustainability Course 3</h3>
+          <p>Short description of the course.</p>
+          <a href="#">Learn More</a>
+        </div>
+      </div>
+    </main>
   </section>
 
   <section>
     <h2>Programs at Qraft Academy</h2>
     <div class="programs">
-      <div class="card">
-        <h3>1. WorkMasters</h3>
-        <p>A work readiness program with Bootcamps, 3-month Internships, and 6-month Apprenticeships across three tracks: Content Creators, Technologists, and Growth Professionals.</p>
-        <p>WorkMasters Bootcamps run weekly, open to the public for UGX 25,000 per class or UGX 500,000 for 6 months. Apprentices and interns attend for free and receive stipends.</p>
-        <button onclick="window.location.href='https://example.com/join-workmasters'">Join WorkMasters Program</button>
-      </div>
-      <div class="card">
-        <h3>2. Future of Work Consortium</h3>
-        <p>A 5-year movement to equip 100M workers in 8 emerging economies through tours, training, and strategic collaborations. Built on 12 Future of Work Principles and 4 Pillars: Academy, Accelerator, Research & Reports, and Workforce Capital.</p>
+     
+      <div class="card wide-card">
+        <h3>Future of Work Consortium</h3>
+        <p>A 5-year movement to equip 100M workers in emerging economies through tours, training, and collaborations.</p>
         <button onclick="window.location.href='https://example.com/join-consortium'">Join Future of Work Consortium</button>
+        <button onclick="window.location.href='https://example.com/join-consortium'">Join Mastermind, Workshop Or Innovation Program</button>
       </div>
+    
+
+      <div class="card wide-card">
+        <h3>Special Groups Program </h3>
+        <p> for Women, Youths, PWDs, and Refugees</p>
+        <button onclick="window.location.href='https://example.com/join-workmasters'">Join Special Program</button>
+      </div>
+
     </div>
   </section>
 
-  <section>
-    <h2>Qraft Solutions Hub</h2>
-    <p>A network and support center for remote workers, gig workers, and startups with access to modern workspaces, investment programs, and referral opportunities.</p>
-    <p>Oversees prizes and awards for the Future of Work Consortium and supports members in branding, placements, and global opportunities.</p>
-    <p>Offers net worth development through investments and net weight growth by profiling, branding, and linking members to business process outsourcing, gigs, placements, and other opportunities.</p>
-  </section>
+  <div class="section">
+    <h2>Projects under Future of Work Consortium</h2>
+</div>
+   
+    <section>
+      <div class="economies">
+        <div class="card" style="background-color: #e91e63;">
+          <h3>Knowledge Economy</h3>
+          <p>Focuses on intellectual capabilities and knowledge-based services.</p>
+          <a href="#">Learn More</a>
+        </div>
+        <div class="card" style="background-color: #1e54e9;">
+          <h3>Innovation Economy</h3>
+          <p>Focuses on reserach and development and cutting age products and startups.</p>
+          <a href="#">Learn More</a>
+        </div>
+        <div class="card" style="background-color: #ff9800;">
+          <h3>Creative Economy</h3>
+          <p>Involves creative industries and cultural services.</p>
+          <a href="#">Learn More</a>
+        </div>
+        <div class="card" style="background-color: #2196f3;">
+          <h3>Digital Economy</h3>
+          <p>Encompasses digital services and products.</p>
+          <a href="#">Learn More</a>
+        </div>
+        <div class="card" style="background-color: #f6b93b;">
+          <h3>Gig Economy</h3>
+          <p>Flexible work arrangements and freelance opportunities.</p>
+          <a href="#">Learn More</a>
+        </div>
+        <div class="card" style="background-color: #4caf50;">
+          <h3>Care Economy</h3>
+          <p>Focuses on health and well-being services.</p>
+          <a href="#">Learn More</a>
+        </div>
+      
+      </div>
+    </section>
 
-  <section>
-    <h2>Qraft Labs</h2>
-    <p>Qraft Labs is the research and development engine of Qraft Academy that supports innovation across 8 economic frontiers—care, experience, gig, trade, green/circular, digital, creative, and knowledge economies.</p>
-    <p>It provides a platform for researchers, innovators, and future-focused entrepreneurs to explore ideas, prototype solutions, and collaborate with peers and experts. Qraft Labs promotes experimentation, co-creation, and problem-solving in real-world workforce challenges.</p>
-    <p>Participants benefit from mentorship, collaborative spaces, research resources, and integration into larger innovation programs like the Future of Work Consortium and Qraft Solutions Hub.</p>
-  </section>
-
-  <section>
-    <h2>Future Of Work Economies We Serve</h2>
-    <div class="economies">
-      <div class="card">Care Economy</div>
-      <div class="card">Experience Economy</div>
-      <div class="card">Gig Economy</div>
-      <div class="card">Trade Economy</div>
-      <div class="card">Green/Circular Economy</div>
-      <div class="card">Digital Economy</div>
-      <div class="card">Creative Economy</div>
-      <div class="card">Knowledge Economy</div>
-    </div>
-  </section>
-
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Rata Qraft Solutions. All rights reserved.</p>
+    <p>&copy; 2025 Rata Qraft Solutions Ltd. All rights reserved.</p>
   </footer>
+  <script>
+    const navLinks = document.querySelectorAll('.course-nav a');
+    const coursesSections = document.querySelectorAll('.courses');
+  
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+  
+        // Remove active class from all links and sections
+        navLinks.forEach(nav => nav.classList.remove('active'));
+        coursesSections.forEach(section => section.classList.remove('active'));
+  
+        // Add active class to the clicked link and corresponding section
+        link.classList.add('active');
+        const category = link.getAttribute('data-category');
+        document.querySelector(`.courses[data-category="${category}"]`).classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>
