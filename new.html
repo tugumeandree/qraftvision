@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qraft Academy</title>
+  
+  
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.navbar {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    background-color: #333;
+}
+
+.navbar li {
+    display: inline-block;
+    position: relative;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+}
+
+.navbar a:hover {
+    background-color: #555;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    min-width: 200px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content li {
+    display: block;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 10px;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #666;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+#masters-info {
+    text-align: center;
+    padding: 40px;
+    background-color: white;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background: #ddd;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    color: #222;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #222;
+    color: white;
+}
+
+    </style>
+    <style>
+        /* Adjust nested dropdown styles */
+        .dropdown-content .dropdown-content {
+            position: absolute;
+            left: 100%; /* Move the nested dropdown to the right of its parent */
+            top: 0;
+            display: none; /* Hide nested dropdown by default */
+            background-color: #444;
+            min-width: 200px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000; /* Ensure it appears above other elements */
+        }
+        
+        /* Show nested dropdown on hover */
+        .dropdown-content .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        </style>
+</head>
+<body>
+    <header>
+        <h1>Qraft Academy</h1>
+        <nav>
+            <ul class="navbar">
+                <li><a href="#home">Home</a></li>
+                <li class="dropdown">
+                    <a href="#workMasters">WorkMasters</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#workReadiness">Work Readiness & Employability</a></li>
+                        <li><a href="#apprenticeship">Apprenticeship Opportunities</a></li>
+                        <li><a href="#freelancers">Browse All Our Talent </a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#courseMasters">CourseMasters</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#makeCourses">Become a Course Creator</a></li>
+                        <li><a href="#letUsMake">We Build Your Course</a></li>
+                        <li><a href="#ourCourses">Browse All Our Courses</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#techMasters">TechMasters</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#digitalSkilling">Digital Skills Training</a></li>
+                        <li><a href="#researchDevelopment">Research & Development Labs</a></li>
+                        <li><a href="#productivityTech">Browse All Our Productivity & EdTech Solutions</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#capitalMasters">CapitalMasters</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#entrepreneurs">Startup & Business Growth</a></li>
+                        <li><a href="#investors">Investor Network & Funding</a></li>
+                        <li><a href="#spaces">Browse All Our Startups</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#futureConsortium">Future of Work Consortium</a>
+                    <ul class="dropdown-content">
+                        <!-- Programs Subcategory -->
+                        <li class="dropdown">
+                            <a href="#programs">Programs</a>
+                            <ul class="dropdown-content">
+                                <li><a href="#careEconomy">Care Economy Innovations</a></li>
+                                <li><a href="#knowledgeEconomy">Knowledge Economy Transformation</a></li>
+                                <li><a href="#digitalEconomy">Digital Workforce Growth</a></li>
+                                <li><a href="#gigEconomy">Gig Economy Opportunities</a></li>
+                                <li><a href="#creativeEconomy">Creative Industries Hub</a></li>
+                                <li><a href="#innovationEconomy">Innovation Ecosystem</a></li>
+                            </ul>
+                        </li>
+                        <!-- Projects Subcategory -->
+                        <li class="dropdown">
+                            <a href="#projects">Projects</a>
+                            <ul class="dropdown-content">
+                                <li><a href="#futureWorkTour">Future of Work Tour</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="masters-info">
+        <h2>Discover Our Masters Programs</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>CourseMasters</h3>
+                <p>Expert-led learning & course creation to empower educators and learners.</p>
+            </div>
+            <div class="card">
+                <h3>WorkMasters</h3>
+                <p>Helping professionals gain employability skills, apprenticeships, and freelance opportunities.</p>
+            </div>
+            <div class="card">
+                <h3>TechMasters</h3>
+                <p>Advanced digital skilling, research labs, and productivity-enhancing tech for a smarter workforce.</p>
+            </div>
+            <div class="card">
+                <h3>CapitalMasters</h3>
+                <p>Entrepreneurial training, investor networking, and creative workspaces for business growth.</p>
+            </div>
+            <div class="card">
+                <h3>Future of Work Consortium</h3>
+                <p>Leading innovation across key economies shaping the future of work.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Qraft Academy | Shaping the Future of Work</p>
+    </footer>
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    dropdowns.forEach(dropdown => {
+        dropdown.addEventListener('mouseenter', function () {
+            this.querySelector('.dropdown-content').style.display = 'block';
+        });
+
+        dropdown.addEventListener('mouseleave', function () {
+            this.querySelector('.dropdown-content').style.display = 'none';
+        });
+    });
+});
+
+    </script>
+</body>
+</html>

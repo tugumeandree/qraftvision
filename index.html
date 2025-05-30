@@ -9,559 +9,731 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!-- Material Icons -->
+
   <style>
-    /* General Styles */
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-      color: #222;
-    }
-  
-    header {
-      background: #0a0a23;
-      color: white;
-      padding: 2rem;
-      text-align: center;
-    }
-  
-    nav {
-      background: #222;
-      padding: 1rem;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    }
-  
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-  
-    nav a:hover, nav a.active {
-      background-color: #4caf50;
-      color: white;
-    }
-  
-    section {
-      padding: 4rem 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-  
-    h1, h2 {
-      text-align: center;
-    }
-  
-    footer {
-      background: #0a0a23;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-  
-    /* Card Styles */
-    .card {
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 1.5rem;
-      background: #fafafa;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-  
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
-  
-    .card-title {
-      font-size: 1.5em;
-      margin: 10px 0;
-    }
-  
-    /* Layout Styles */
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-  
-    .cta-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 1rem;
-    }
-  
-    .cta-buttons button {
-      background: #4caf50;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-  
-    .cta-buttons button:hover {
-      background: #388e3c;
-    }
-  
-    /* Spaces and Economies Layout */
-    .spaces, .economies {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-  
-    /* Navigation Styles for Courses Section */
-    .course-nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap; /* Allows wrapping on smaller screens */
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-  
-    .course-nav a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      padding: 0.8rem 1.5rem;
-      border: 1px solid #4caf50;
-      border-radius: 5px;
-      background-color: #4caf50;
-      font-size: 1rem;
-      transition: background-color 0.3s, color 0.3s;
-      text-align: center;
-      white-space: nowrap;
-    }
-  
-    .course-nav a:hover {
-      background-color: #388e3c;
-      color: white;
-    }
-  
-    .course-nav a.active {
-      background-color: #0a0a23;
-      color: white;
-      border-color: #0a0a23;
-    }
-  
-    /* Courses Container */
-    .courses-container {
-      display: grid;
-      gap: 2rem;
-    }
-  
-    .courses {
-      display: none;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-  
-    .courses.active {
-      display: grid;
-    }
-  
-    .course {
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 1rem;
-      background: #fafafa;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-  
-    .course h3 {
-      margin: 0.5rem 0;
-      color: #0a0a23;
-    }
-  
-    .course p {
-      margin: 0.5rem 0 1rem;
-      color: #555;
-    }
-  
-    .course a {
-      text-decoration: none;
-      color: white;
-      background: #4caf50;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
-  
-    .course a:hover {
-      background: #388e3c;
-    }
-  
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      header {
-        padding: 1.5rem;
-      }
-  
-      nav {
-        flex-direction: column;
-        gap: 1rem;
-      }
-  
-      .card img {
-        height: 150px; /* Reduce image height for smaller screens */
-      }
-  
-      .cta-buttons button {
-        font-size: 0.9rem; /* Adjust button font size */
-        padding: 8px 12px;
-      }
-  
-      .course-nav a {
-        font-size: 0.9rem; /* Adjust font size for smaller screens */
-        padding: 0.6rem 1rem;
-      }
-    }
-  
-    @media (max-width: 480px) {
-      .card img {
-        height: 120px; /* Further reduce image height for very small screens */
-      }
-  
-      .cta-buttons button {
-        font-size: 0.8rem;
-        padding: 6px 10px;
-      }
-  
-      .course-nav a {
-        font-size: 0.8rem;
-        padding: 0.5rem 0.8rem;
-      }
-    }
-  </style>
-  <style>
+    
     /* Navigation Bar */
-    .navigation {
-      background-color: #222;
-      padding: 1rem;
+    .nav-wrapper {
       display: flex;
       align-items: center;
-      justify-content: space-between; /* Space between logo and links */
-      position: fixed; /* Fix the navigation bar at the top */
-      top: 0;
-      width: 100%;
-      z-index: 1000; /* Ensure it stays above other elements */
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+      justify-content: space-between;
+      padding: 0 1rem;
     }
-  
-    /* Logo */
-    .navigation img {
-      height: 50px; /* Adjust the logo size */
-      width: auto; /* Maintain aspect ratio */
-    }
-  
-    /* Navigation Links */
-    .navigation nav {
+
+    .brand-logo {
       display: flex;
-      gap: 1rem;
+      align-items: center;
     }
-  
-    .navigation nav a {
+
+    .brand-logo img {
+      height: 50px;
+      width: auto;
+    }
+
+    ul.right {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem; /* Increase spacing between items */
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    ul.right li {
+      white-space: nowrap; /* Prevent text wrapping */
+    }
+
+    ul.right a {
+      display: flex;
+      align-items: center; /* Center text and icon vertically */
       text-decoration: none;
       color: white;
       font-weight: 600;
       padding: 0.5rem 1rem;
-      border-radius: 5px;
       transition: background-color 0.3s ease;
     }
-  
-    .navigation nav a:hover, .navigation nav a.active {
-      background-color: #4caf50;
+
+    ul.right a:hover {
+      background-color: rgba(255, 255, 255, 0.1); /* Add hover effect */
+      border-radius: 5px;
+    }
+
+    .material-icons {
+      margin-left: 5px; /* Add spacing between text and icon */
+      font-size: 18px; /* Adjust icon size */
+    }
+
+    /* Dropdowns */
+    .dropdown-content {
+      display: none; /* Hide dropdowns by default */
+      position: absolute;
+      background-color: black; /* Set background color to white */
+      min-width: 400px;
+      max-width: 300px; /* Set a maximum width for dropdown */
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      border-radius: 5px;
+      overflow: hidden;
+      white-space: normal; /* Allow text to wrap to the next line */
+    }
+
+    .dropdown-content li {
+      display: block;
+    }
+
+    .dropdown-content a {
+      padding: 10px 15px; /* Add padding for better spacing */
+      color: black; /* Set text color to black */
+      text-decoration: none;
+      display: block;
+      transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f4f4f4; /* Add hover effect for background */
+      color: black; /* Ensure text remains black on hover */
+    }
+
+    /* Center the Navbar */
+    nav {
+      text-align: center;
+    }
+
+    nav .nav-wrapper {
+      margin: 0 auto;
+      max-width: 1200px; /* Center the navbar and limit its width */
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .sidenav-trigger {
+        display: block; /* Show sidenav trigger on smaller screens */
+      }
+
+      ul.right {
+        display: none; /* Hide desktop navigation on smaller screens */
+      }
+
+      .sidenav {
+        display: block; /* Show sidenav on smaller screens */
+      }
+    }
+
+    /* General Section Styling */
+    section {
+      padding: 50px 0;
+    }
+
+    section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+
+    .card {
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .card .card-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .card .card-content p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .card-action .btn {
+      margin-right: 10px;
+      margin-top: 10px;
+    }
+
+    .card-image img {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      section h2 {
+        font-size: 2rem;
+      }
+
+      .card .card-title {
+        font-size: 1.25rem;
+      }
+
+      .card .card-content p {
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Course Navigation Bar */
+    .course-nav {
+      display: flex;
+      justify-content: center; /* Center the navigation bar */
+      flex-wrap: wrap; /* Allow wrapping on smaller screens */
+      gap: 10px; /* Add spacing between buttons */
+      margin-bottom: 20px; /* Add spacing below the navigation bar */
+    }
+
+    .course-nav a {
+      flex: 1 1 calc(25% - 10px); /* Ensure buttons take equal width (25% of the row) */
+      text-align: center; /* Center the text inside the buttons */
+      padding: 10px 15px; /* Add consistent padding */
+      box-sizing: border-box; /* Include padding in width calculation */
+      min-width: 150px; /* Set a minimum width for smaller screens */
+    }
+
+    @media (max-width: 768px) {
+      .course-nav a {
+        flex: 1 1 calc(50% - 10px); /* Adjust to 2 buttons per row on smaller screens */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .course-nav a {
+        flex: 1 1 100%; /* Stack buttons vertically on very small screens */
+      }
+    }
+
+    .course-nav a.active {
+      background-color: #1565c0; /* Dark blue for active state */
       color: white;
     }
-  
-    /* Add padding to the body to prevent content from overlapping the fixed navbar */
-    body {
-      padding-top: 80px; /* Adjust based on the height of the navbar */
+
+    .courses {
+      display: none; /* Hide all course sections by default */
+    }
+
+    .courses.active {
+      display: block; /* Show the active course section */
     }
   </style>
 </head>
+
 <body>
 
-  <!-- Navigation -->
-  <div class="navigation">
-    <a href="#"><img src="/images/8.png" alt="Qraft Academy Logo"></a>
-    <nav>
-      <a href="products.html">Products</a>
-      <a href="spaces.html">Spaces</a>
-      <a href="courses.html">Courses</a>
-      <a href="programs.html">Programs</a>
-      <a href="projects.html">Projects</a>
-      <a href="media.html">Media</a>
-      <a href="about.html">About</a>
-      <a href="login.html">Login</a>
+    <!-- Navigation -->
+    <nav class="nav-wrapper blue darken-3">
+      <div>
+        <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a class="dropdown-trigger" href="#!" data-target="workMastersDropdown">WorkMasters<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a class="dropdown-trigger" href="#!" data-target="courseMastersDropdown">CourseMasters<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a class="dropdown-trigger" href="#!" data-target="techMastersDropdown">TechMasters<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a class="dropdown-trigger" href="#!" data-target="capitalMastersDropdown">CapitalMasters<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a class="dropdown-trigger" href="#!" data-target="futureConsortiumDropdown">Future of Work Consortium<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a class="dropdown-trigger" href="#!" data-target="communityDropdown">Community<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a class="dropdown-trigger" href="#!" data-target="programsDropdown">Programs<i class="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
+      </div>
     </nav>
-  </div>
+    
+    <!-- Dropdown Structures -->
+    <ul id="workMastersDropdown" class="dropdown-content">
+      <li><a href="#workReadiness">Work Readiness Bootcamp</a></li>
+      <li><a href="#apprenticeship">Apprenticeship and Employability Opportunities</a></li>
+      <li><a href="#talent">Browse All Our Freelance Talent</a></li>
+    </ul>
+    
+    <ul id="courseMastersDropdown" class="dropdown-content">
+      <li><a href="#makeCourses">Become a Course Creator</a></li>
+      <li><a href="#letUsMake">Let Us Build Your Course</a></li>
+      <li><a href="#ourCourses">Browse All Our Courses</a></li>
+    </ul>
+    
+    <ul id="techMastersDropdown" class="dropdown-content">
+      <li><a href="#digitalSkilling">Hackathons And Open Source</a></li>
+      <li><a href="#researchDevelopment">Research & Development Labs</a></li>
+      <li><a href="#productivityTech">Browse All Our Productivity & EdTech Solutions</a></li>
+    </ul>
+    
+    <ul id="capitalMastersDropdown" class="dropdown-content">
+      <li><a href="#investors">Investor Network</a></li>
+      <li><a href="#entrepreneurs">Startup & Business Growth Hub</a></li>
+      <li><a href="#spaces">Browse All Our Startups</a></li>
+    </ul>
+    
+    <ul id="futureConsortiumDropdown" class="dropdown-content">
+      <li><a href="#programs">Board</a></li>
+      <li><a href="#projects">Policies</a></li>
+      <li><a href="#members">Members</a></li>
+    </ul>
+    
+    <!-- New Dropdown: Community -->
+    <ul id="communityDropdown" class="dropdown-content">
+      <li><a href="#futureWorkTour">Future Of Work Tour</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#specialGroups">Special Groups</a></li>
+    </ul>
+    
+    <!-- New Dropdown: Programs -->
+    <ul id="programsDropdown" class="dropdown-content">
+      <li><a href="#careEconomy">Care Economy</a></li>
+      <li><a href="#knowledgeEconomy">Knowledge Economy</a></li>
+      <li><a href="#digitalEconomy">Digital Economy</a></li>
+      <li><a href="#gigEconomy">Gig Economy</a></li>
+      <li><a href="#creativeEconomy">Creative Economy</a></li>
+      <li><a href="#innovationEconomy">Innovation Economy</a></li>
+    </ul>
+  
+   <!-- Sidenav for Mobile -->
+<ul class="sidenav" id="mobile-menu">
+  <li><a href="#home">Home</a></li>
+  <li><a class="dropdown-trigger" href="#!" data-target="workMastersDropdownMobile">WorkMasters<i class="material-icons right">arrow_drop_down</i></a></li>
+  <li><a class="dropdown-trigger" href="#!" data-target="courseMastersDropdownMobile">CourseMasters<i class="material-icons right">arrow_drop_down</i></a></li>
+  <li><a class="dropdown-trigger" href="#!" data-target="techMastersDropdownMobile">TechMasters<i class="material-icons right">arrow_drop_down</i></a></li>
+  <li><a class="dropdown-trigger" href="#!" data-target="capitalMastersDropdownMobile">CapitalMasters<i class="material-icons right">arrow_drop_down</i></a></li>
+  <li><a class="dropdown-trigger" href="#!" data-target="futureConsortiumDropdownMobile">Future of Work Consortium<i class="material-icons right">arrow_drop_down</i></a></li>
+  <li><a href="#contact">Contact</a></li>
+</ul>
 
-  <!-- Header -->
-  <header>
-    <h1>Welcome to Qraft Academy</h1>
-    <p>Modern Workforce Development for the Future of Work</p>
-    <p><em>We help you Learn, Work, and Achieve</em></p>
-  </header>
+
+    <!-- Content -->
+  <div class="container">
+    <header>
+      <h1>Welcome to Qraft Academy</h1>
+      <p>Modern Workforce Development for the Future of Work</p>
+      <p><em>We help you Learn, Work, and Achieve</em></p>
+    </header>
+
 
   <!-- Products Section -->
-  <section>
-    <h2>Products</h2>
+  <section class="section">
+    <h2 class="center-align">Our Products</h2>
     <div class="container">
-      <div class="card">
-        <img src="/images/coursecreators.jpg" alt="CourseMasters Image">
-        <div class="card-title">CourseMasters</div>
-        <p>We design and develop engaging e-learning courses for clients and train content creators to produce professional-quality courses.</p>
-        <div class="cta-buttons">
-          <button>Apply to Learn Course Production</button>
-          <button>Get Your Course Developed</button>
+      <div class="row">
+        <!-- CourseMasters Card -->
+        <div class="col s12 m6 l6">
+          <div class="card large hoverable">
+            <div class="card-image">
+              <img src="/images/coursecreators.jpg" alt="CourseMasters Image">
+            </div>
+            <div class="card-content">
+              <span class="card-title">CourseMasters</span>
+              <p>We design and develop engaging e-learning courses for clients and train content creators to produce professional-quality courses.</p>
+            </div>
+            <div class="card-action">
+              <a href="#" class="btn blue darken-3">Learn Course Production</a>
+              <a href="#" class="btn blue lighten-1">Get Your Course Developed</a>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <img src="/images/techmasters.jpg" alt="TechMasters Image">
-        <div class="card-title">TechMasters</div>
-        <p>Learn modern digital, design, and data skills to thrive in the AI revolution.</p>
-        <div class="cta-buttons">
-          <button>Apply to Learn a Technical Skill</button>
-          <button>Get Top Talent from Us</button>
+
+        <!-- TechMasters Card -->
+        <div class="col s12 m6 l6">
+          <div class="card large hoverable">
+            <div class="card-image">
+              <img src="/images/techmasters.jpg" alt="TechMasters Image">
+            </div>
+            <div class="card-content">
+              <span class="card-title">TechMasters</span>
+              <p>Learn modern digital, design, and data skills to thrive in the AI revolution.</p>
+            </div>
+            <div class="card-action">
+              <a href="#" class="btn blue darken-3">Learn a Technical Skill</a>
+              <a href="#" class="btn blue lighten-1">Get Top Talent</a>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <img src="/images/workmasters.jpeg" alt="WorkMasters Image">
-        <div class="card-title">WorkMasters</div>
-        <p>Work readiness apprenticeships, freelancing bootcamps, and employability programs to advance your career.</p>
-        <div class="cta-buttons">
-          <button>Open Apprenticeships</button>
-          <button>Join Freelancing Bootcamp</button>
+
+        <!-- WorkMasters Card -->
+        <div class="col s12 m6 l6">
+          <div class="card large hoverable">
+            <div class="card-image">
+              <img src="/images/workmasters.jpeg" alt="WorkMasters Image">
+            </div>
+            <div class="card-content">
+              <span class="card-title">WorkMasters</span>
+              <p>Work readiness apprenticeships, freelancing bootcamps, and employability programs to advance your career.</p>
+            </div>
+            <div class="card-action">
+              <a href="#" class="btn blue darken-3">Open Apprenticeships</a>
+              <a href="#" class="btn blue lighten-1">Join Bootcamp</a>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <img src="/images/capitalmasters.jpg" alt="CapitalMasters Image">
-        <div class="card-title">CapitalMasters</div>
-        <p>We help entrepreneurs raise funding and prepare for their next funding round.</p>
-        <div class="cta-buttons">
-          <button>Apply to Learn Fundraising</button>
-          <button>Get Funding</button>
+
+        <!-- CapitalMasters Card -->
+        <div class="col s12 m6 l6">
+          <div class="card large hoverable">
+            <div class="card-image">
+              <img src="/images/capitalmasters.jpg" alt="CapitalMasters Image">
+            </div>
+            <div class="card-content">
+              <span class="card-title">CapitalMasters</span>
+              <p>We help entrepreneurs raise funding and prepare for their next funding round.</p>
+            </div>
+            <div class="card-action">
+              <a href="#" class="btn blue darken-3">Learn Fundraising</a>
+              <a href="#" class="btn blue lighten-1">Get Funding</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Spaces Section -->
-  <section>
-    <h2>Our Spaces</h2>
-    <div class="spaces">
-      <div class="card">
-        <img src="/images/qraft labs.jpg" alt="Qraft Labs Image">
-        <h3>Qraft Labs</h3>
-        <p>R&D engine supporting innovation across 8 economic frontiers.</p>
-        <div class="cta-buttons">
-          <button>Join Qraft Labs</button>
+  <section class="section">
+    <h2 class="center-align">Our Spaces</h2>
+    <div class="container">
+      <div class="row">
+        <!-- Qraft Labs Card -->
+        <div class="col s12 m6">
+          <div class="card hoverable">
+            <div class="card-image">
+              <img src="/images/qraft labs.jpg" alt="Qraft Labs Image">
+            </div>
+            <div class="card-content">
+              <span class="card-title">Qraft Labs</span>
+              <p>Qraft Labs is a dedicated space that combines research and development facilities tailored for TechMasters, along with audio, video, and animation course creation studios designed specifically for CourseMasters.</p>
+            </div>
+            <div class="card-action">
+              <a href="#" class="btn blue darken-3">Join Qraft Labs</a>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <img src="/images/qraftsolutionshub.jpg" alt="Qraft Solutions Hub Image">
-        <h3>Qraft Solutions Hub</h3>
-        <p>A vibrant center for coworking, events, and training sessions.</p>
-        <div class="cta-buttons">
-          <button>Join Qraft Solutions Hub</button>
+
+        <!-- Qraft Solutions Hub Card -->
+        <div class="col s12 m6">
+          <div class="card hoverable">
+            <div class="card-image">
+              <img src="/images/qraftsolutionshub.jpg" alt="Qraft Solutions Hub Image">
+            </div>
+            <div class="card-content">
+              <span class="card-title">Qraft Solutions Hub</span>
+              <p>
+                Qraft Solutions Hub is a versatile space designed for innovation and collaboration, offering Workmasters offices and co-working areas, bootcamp facilities, training spaces for skill development, venues for hackathons, resources for business incubation and acceleration, and community meet-ups for networking and idea sharing.
+                </p>
+            </div>
+            <div class="card-action">
+              <a href="#" class="btn blue darken-3">Join Qraft Solutions Hub</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section>
-    <h2>Courses</h2>
-    <header>
-      <nav class="course-nav">
-        <a href="#"  class="active" data-category="productivity">Productivity & Professional Devnt</a>
-        <a href="#" data-category="personal">Personal Devnt & Well-being</a>
-        <a href="#" data-category="leadership">Leadership Devnt</a>
-        <a href="#"  data-category="sustainability">Sustainability & Growth</a>
-      </nav>
-    </header>
-  
-    <main class="courses-container">
+  <!-- Courses Section -->
+<section class="section">
+  <h2 class="center-align">Our Courses</h2>
+  <div class="container">
+    <!-- Course Navigation -->
+    <nav class="course-nav center-align">
+      <a href="#" class="btn blue darken-3 active" data-category="productivity">Productivity & Professional Development</a>
+      <a href="#" class="btn blue lighten-1" data-category="personal">Personal Development & Well-being</a>
+      <a href="#" class="btn blue darken-3" data-category="leadership">Leadership Development</a>
+      <a href="#" class="btn blue lighten-1" data-category="sustainability">Sustainability & Growth</a>
+    </nav>
+
+    <!-- Courses Content -->
+    <div class="courses-container">
       <!-- Productivity Courses -->
-      <div class="courses active" data-category="productivity">
-        <div class="course">
-          <h3>Productivity Course Title 1</h3>
-          <p>Short description of the course.</p>
-          <a href="#">Learn More</a>
+      <div class="row courses active" data-category="productivity">
+        <div class="col s12 m6 l4">
+          <div class="card hoverable">
+            <div class="card-content">
+              <span class="card-title">Productivity Course 1</span>
+              <p>Learn how to boost your productivity and achieve your professional goals.</p>
+            </div>
+            <div class="card-action">
+              <a href="#" class="btn blue darken-3">Learn More</a>
+            </div>
+          </div>
         </div>
-        <div class="course">
-          <h3> Productivity Course Title 2</h3>
-          <p>Short description of the course.</p>
-          <a href="#">Learn More</a>
+        <div class="col s12 m6 l4">
+          <div class="card hoverable">
+            <div class="card-content">
+              <span class="card-title">Productivity Course 2</span>
+              <p>Master time management and professional development strategies.</p>
+            </div>
+            <div class="card-action">
+              <a href="#" class="btn blue darken-3">Learn More</a>
+            </div>
+          </div>
         </div>
-        <div class="course">
-          <h3> Productivity Course Title 3</h3>
-          <p>Short description of the course.</p>
-          <a href="#">Learn More</a>
+        <div class="col s12 m6 l4">
+          <div class="card hoverable">
+            <div class="card-content">
+              <span class="card-title">Productivity Course 3</span>
+              <p>Enhance your skills to excel in your career and personal life.</p>
+            </div>
+            <div class="card-action">
+              <a href="#" class="btn blue darken-3">Learn More</a>
+            </div>
+          </div>
         </div>
       </div>
-  
+
       <!-- Personal Development Courses -->
-      <div class="courses" data-category="personal">
-        <div class="course">
-          <h3>Personal Development Course 1</h3>
-          <p>Short description of the course.</p>
-          <a href="#">Learn More</a>
+      <div class="row courses" data-category="personal">
+        <div class="col s12 m6 l4">
+          <div class="card hoverable">
+            <div class="card-content">
+              <span class="card-title">Personal Development Course 1</span>
+              <p>Discover techniques to improve your mental and physical well-being.</p>
+            </div>
+            <div class="card-action">
+              <a href="#" class="btn blue darken-3">Learn More</a>
+            </div>
+          </div>
         </div>
-        <div class="course">
-          <h3>Personal Development Course 2</h3>
-          <p>Short description of the course.</p>
-          <a href="#">Learn More</a>
+        <div class="col s12 m6 l4">
+          <div class="card hoverable">
+            <div class="card-content">
+              <span class="card-title">Personal Development Course 2</span>
+              <p>Build habits that lead to a healthier and more fulfilling life.</p>
+            </div>
+            <div class="card-action">
+              <a href="#" class="btn blue darken-3">Learn More</a>
+            </div>
+          </div>
         </div>
-        <div class="course">
-          <h3>Personal Development Course 3</h3>
-          <p>Short description of the course.</p>
-          <a href="#">Learn More</a>
+        <div class="col s12 m6 l4">
+          <div class="card hoverable">
+            <div class="card-content">
+              <span class="card-title">Personal Development Course 3</span>
+              <p>Learn mindfulness and stress management techniques.</p>
+            </div>
+            <div class="card-action">
+              <a href="#" class="btn blue darken-3">Learn More</a>
+            </div>
+          </div>
         </div>
       </div>
-  
+
       <!-- Leadership Courses -->
-      <div class="courses" data-category="leadership">
-        <div class="course">
-          <h3>Leadership Course 1</h3>
-          <p>Short description of the course.</p>
-          <a href="#">Learn More</a>
+      <div class="row courses" data-category="leadership">
+        <div class="col s12 m6 l4">
+          <div class="card hoverable">
+            <div class="card-content">
+              <span class="card-title">Leadership Course 1</span>
+              <p>Develop leadership skills to inspire and lead teams effectively.</p>
+            </div>
+            <div class="card-action">
+              <a href="#" class="btn blue darken-3">Learn More</a>
+            </div>
+          </div>
         </div>
-        <div class="course">
-          <h3>Leadership Course 2</h3>
-          <p>Short description of the course.</p>
-          <a href="#">Learn More</a>
+        <div class="col s12 m6 l4">
+          <div class="card hoverable">
+            <div class="card-content">
+              <span class="card-title">Leadership Course 2</span>
+              <p>Master decision-making and strategic thinking as a leader.</p>
+            </div>
+            <div class="card-action">
+              <a href="#" class="btn blue darken-3">Learn More</a>
+            </div>
+          </div>
         </div>
-        <div class="course">
-          <h3>Leadership Course 3</h3>
-          <p>Short description of the course.</p>
-          <a href="#">Learn More</a>
+        <div class="col s12 m6 l4">
+          <div class="card hoverable">
+            <div class="card-content">
+              <span class="card-title">Leadership Course 3</span>
+              <p>Learn how to build and manage high-performing teams.</p>
+            </div>
+            <div class="card-action">
+              <a href="#" class="btn blue darken-3">Learn More</a>
+            </div>
+          </div>
         </div>
       </div>
-  
+
       <!-- Sustainability Courses -->
-      <div class="courses" data-category="sustainability">
-        <div class="course">
-          <h3>Sustainability Course 1</h3>
-          <p>Short description of the course.</p>
-          <a href="#">Learn More</a>
+      <div class="row courses" data-category="sustainability">
+        <div class="col s12 m6 l4">
+          <div class="card hoverable">
+            <div class="card-content">
+              <span class="card-title">Sustainability Course 1</span>
+              <p>Learn sustainable practices for personal and professional growth.</p>
+            </div>
+            <div class="card-action">
+              <a href="#" class="btn blue darken-3">Learn More</a>
+            </div>
+          </div>
         </div>
-        <div class="course">
-          <h3>Sustainability Course 2</h3>
-          <p>Short description of the course.</p>
-          <a href="#">Learn More</a>
+        <div class="col s12 m6 l4">
+          <div class="card hoverable">
+            <div class="card-content">
+              <span class="card-title">Sustainability Course 2</span>
+              <p>Explore strategies for long-term success and environmental impact.</p>
+            </div>
+            <div class="card-action">
+              <a href="#" class="btn blue darken-3">Learn More</a>
+            </div>
+          </div>
         </div>
-        <div class="course">
-          <h3>Sustainability Course 3</h3>
-          <p>Short description of the course.</p>
-          <a href="#">Learn More</a>
+        <div class="col s12 m6 l4">
+          <div class="card hoverable">
+            <div class="card-content">
+              <span class="card-title">Sustainability Course 3</span>
+              <p>Understand the principles of sustainable development and growth.</p>
+            </div>
+            <div class="card-action">
+              <a href="#" class="btn blue darken-3">Learn More</a>
+            </div>
+          </div>
         </div>
       </div>
-    </main>
-  </section>
-
-  <section>
-    <h2>Programs at Qraft Academy</h2>
-    <div class="programs">
-     
-      <div class="card wide-card">
-        <h3>Future of Work Consortium</h3>
-        <p>A 5-year movement to equip 100M workers in emerging economies through tours, training, and collaborations.</p>
-        <button onclick="window.location.href='https://example.com/join-consortium'">Join Future of Work Consortium</button>
-        <button onclick="window.location.href='https://example.com/join-consortium'">Join Mastermind, Workshop Or Innovation Program</button>
-      </div>
-    
-
-      <div class="card wide-card">
-        <h3>Special Groups Program </h3>
-        <p> for Women, Youths, PWDs, and Refugees</p>
-        <button onclick="window.location.href='https://example.com/join-workmasters'">Join Special Program</button>
-      </div>
-
     </div>
-  </section>
+  </div>
+</section>
 
-  <div class="section">
-    <h2>Projects under Future of Work Consortium</h2>
-</div>
-   
-    <section>
-      <div class="economies">
-        <div class="card" style="background-color: #e91e63;">
-          <h3>Knowledge Economy</h3>
-          <p>Focuses on intellectual capabilities and knowledge-based services.</p>
-          <a href="#">Learn More</a>
+<!-- Programs Section -->
+<section class="section">
+  <h2 class="center-align">Our Programs</h2>
+  <div class="container">
+    <div class="row">
+      <!-- Knowledge Economy Card -->
+      <div class="col s12 m6 l4">
+        <div class="card hoverable">
+          <div class="card-content" style="background-color: #e91e63; color: white;">
+            <span class="card-title">Knowledge Economy</span>
+            <p>Focuses on intellectual capabilities and knowledge-based services.</p>
+          </div>
+          <div class="card-action">
+            <a href="#" class="btn white black-text">Learn More</a>
+          </div>
         </div>
-        <div class="card" style="background-color: #1e54e9;">
-          <h3>Innovation Economy</h3>
-          <p>Focuses on reserach and development and cutting age products and startups.</p>
-          <a href="#">Learn More</a>
-        </div>
-        <div class="card" style="background-color: #ff9800;">
-          <h3>Creative Economy</h3>
-          <p>Involves creative industries and cultural services.</p>
-          <a href="#">Learn More</a>
-        </div>
-        <div class="card" style="background-color: #2196f3;">
-          <h3>Digital Economy</h3>
-          <p>Encompasses digital services and products.</p>
-          <a href="#">Learn More</a>
-        </div>
-        <div class="card" style="background-color: #f6b93b;">
-          <h3>Gig Economy</h3>
-          <p>Flexible work arrangements and freelance opportunities.</p>
-          <a href="#">Learn More</a>
-        </div>
-        <div class="card" style="background-color: #4caf50;">
-          <h3>Care Economy</h3>
-          <p>Focuses on health and well-being services.</p>
-          <a href="#">Learn More</a>
-        </div>
-      
       </div>
-    </section>
 
-  <!-- Footer -->
-  <footer>
+      <!-- Innovation Economy Card -->
+      <div class="col s12 m6 l4">
+        <div class="card hoverable">
+          <div class="card-content" style="background-color: #1e54e9; color: white;">
+            <span class="card-title">Innovation Economy</span>
+            <p>Focuses on research and development and cutting-edge products and startups.</p>
+          </div>
+          <div class="card-action">
+            <a href="#" class="btn white black-text">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Creative Economy Card -->
+      <div class="col s12 m6 l4">
+        <div class="card hoverable">
+          <div class="card-content" style="background-color: #ff9800; color: white;">
+            <span class="card-title">Creative Economy</span>
+            <p>Involves creative industries and cultural services.</p>
+          </div>
+          <div class="card-action">
+            <a href="#" class="btn white black-text">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Digital Economy Card -->
+      <div class="col s12 m6 l4">
+        <div class="card hoverable">
+          <div class="card-content" style="background-color: #2196f3; color: white;">
+            <span class="card-title">Digital Economy</span>
+            <p>Encompasses digital services and products.</p>
+          </div>
+          <div class="card-action">
+            <a href="#" class="btn white black-text">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gig Economy Card -->
+      <div class="col s12 m6 l4">
+        <div class="card hoverable">
+          <div class="card-content" style="background-color: #f6b93b; color: white;">
+            <span class="card-title">Gig Economy</span>
+            <p>Flexible work arrangements and freelance opportunities.</p>
+          </div>
+          <div class="card-action">
+            <a href="#" class="btn white black-text">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Care Economy Card -->
+      <div class="col s12 m6 l4">
+        <div class="card hoverable">
+          <div class="card-content" style="background-color: #4caf50; color: white;">
+            <span class="card-title">Care Economy</span>
+            <p>Focuses on health and well-being services.</p>
+          </div>
+          <div class="card-action">
+            <a href="#" class="btn white black-text">Learn More</a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+ <!-- Footer -->
+ <footer class="page-footer blue darken-3">
+  <div class="container">
     <p>&copy; 2025 Rata Qraft Solutions Ltd. All rights reserved.</p>
-  </footer>
+  </div>
+</footer>
+
   <script>
-    const navLinks = document.querySelectorAll('.course-nav a');
-    const coursesSections = document.querySelectorAll('.courses');
-  
-    navLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-  
-        // Remove active class from all links and sections
-        navLinks.forEach(nav => nav.classList.remove('active'));
-        coursesSections.forEach(section => section.classList.remove('active'));
-  
-        // Add active class to the clicked link and corresponding section
-        link.classList.add('active');
-        const category = link.getAttribute('data-category');
-        document.querySelector(`.courses[data-category="${category}"]`).classList.add('active');
+    document.addEventListener('DOMContentLoaded', function () {
+      // Handle course navigation
+      const navLinks = document.querySelectorAll('.course-nav a');
+      const coursesSections = document.querySelectorAll('.courses');
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+
+          // Remove active class from all links and sections
+          navLinks.forEach(nav => nav.classList.remove('active'));
+          coursesSections.forEach(section => section.classList.remove('active'));
+
+          // Add active class to the clicked link and corresponding section
+          link.classList.add('active');
+          const category = link.getAttribute('data-category');
+          const targetSection = document.querySelector(`.courses[data-category="${category}"]`);
+          if (targetSection) {
+            targetSection.classList.add('active');
+          }
+        });
       });
+
+      // Handle dropdown hover functionality
+      const dropdownElements = document.querySelectorAll('.dropdown');
+
+      dropdownElements.forEach(dropdown => {
+        dropdown.addEventListener('mouseenter', function () {
+          const content = this.querySelector('.dropdown-content');
+          if (content) {
+            content.style.display = 'block';
+          }
+        });
+
+        dropdown.addEventListener('mouseleave', function () {
+          const content = this.querySelector('.dropdown-content');
+          if (content) {
+            content.style.display = 'none';
+          }
+        });
+      });
+
+      // Initialize dropdown triggers
+      const dropdownTriggers = document.querySelectorAll('.dropdown-trigger');
+      M.Dropdown.init(dropdownTriggers, { hover: true, coverTrigger: false });
+
+      // Initialize sidenav
+      const sidenav = document.querySelectorAll('.sidenav');
+      M.Sidenav.init(sidenav);
     });
   </script>
+   <!-- Materialize JavaScript -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
