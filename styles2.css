@@ -1,0 +1,674 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+header {
+  background-color: #004080;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.hero {
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.hero .cta {
+  background-color: #004080;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.overview {
+  padding: 20px;
+}
+
+.overview h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-around;
+}
+
+.step {
+  width: 30%;
+  background-color: #e8e8e8;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.consultation {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.consultation h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.consultation ul {
+  list-style: none;
+  padding: 0;
+}
+
+.consultation ul li {
+  margin-bottom: 10px;
+}
+
+.consultation .cta {
+  display: block;
+  margin: 20px auto;
+  background-color: #004080;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.handbook {
+  padding: 20px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.handbook h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+
+.handbook p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.handbook ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.handbook ul li {
+  margin-bottom: 10px;
+  font-size: 1em;
+}
+
+.handbook .cta {
+  background-color: #004080;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.create-course {
+  position: relative; /* Allows positioning of the overlay */
+  padding: 100px 20px;
+  background-image: url('./images/Screenshot\ 2025-07-17\ at\ 21.01.33.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  color: white;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.create-course::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+  z-index: 1; /* Places the overlay below the text */
+}
+
+.create-course h2,
+.create-course p,
+.create-course .cta {
+  position: relative; /* Ensures text is above the overlay */
+  z-index: 2;
+}
+
+.create-course h2 {
+  font-size: 3em; /* Larger font size for better visibility */
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adds a shadow for better readability */
+}
+
+.create-course p {
+  font-size: 1.5em; /* Larger font size for better readability */
+  margin-bottom: 30px;
+  max-width: 800px; /* Limits the width of the text */
+  line-height: 1.6; /* Improves readability */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adds a shadow for better readability */
+}
+
+.create-course .cta {
+  background-color: #004080;
+  color: #fff;
+  padding: 15px 30px; /* Larger button for better visibility */
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  border-radius: 5px;
+  text-transform: uppercase; /* Makes the button text uppercase */
+  transition: background-color 0.3s ease; /* Adds a hover effect */
+}
+
+.create-course .cta:hover {
+  background-color: #002d5a; /* Darker shade on hover */
+}
+
+.learn-course-creation {
+  position: relative;
+  padding: 50px 20px;
+  background-image: url('./images/learn.jpg'); /* Replace with your image path */
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  height: 100vh; /* Makes the section take up the full viewport height */
+  color: white; /* Ensures text is readable over the background */
+  display: flex; /* Enables Flexbox */
+  flex-direction: column; /* Aligns items vertically */
+  justify-content: center; /* Centers items vertically */
+  align-items: center; /* Centers items horizontally */
+  text-align: center; /* Centers text */
+}
+
+.learn-course-creation::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent overlay for better text visibility */
+  z-index: 1; /* Places the overlay below the text */
+}
+
+.learn-course-creation h2,
+.learn-course-creation p,
+.learn-course-creation .cta {
+  position: relative; /* Ensures text is above the overlay */
+  z-index: 2;
+}
+
+.learn-course-creation h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adds a shadow for better readability */
+}
+
+.learn-course-creation p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adds a shadow for better readability */
+}
+
+.learn-course-creation .cta {
+  background-color: #004080;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 5px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.learn-course-creation .cta:hover {
+  background-color: #002d5a;
+}
+
+.browse-courses {
+  position: relative;
+  padding: 50px 20px;
+  background-image: url('./images/browse.jpg'); /* Replace with your image path */
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  height: 100vh; /* Makes the section take up the full viewport height */
+  color: white; /* Ensures text is readable over the background */
+  display: flex; /* Enables Flexbox */
+  flex-direction: column; /* Aligns items vertically */
+  justify-content: center; /* Centers items vertically */
+  align-items: center; /* Centers items horizontally */
+  text-align: center; /* Centers text */
+}
+
+.browse-courses::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent overlay for better text visibility */
+  z-index: 1; /* Places the overlay below the text */
+}
+
+.browse-courses h2,
+.browse-courses p,
+.browse-courses .cta {
+  position: relative; /* Ensures text is above the overlay */
+  z-index: 2;
+}
+
+.browse-courses h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adds a shadow for better readability */
+}
+
+.browse-courses p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adds a shadow for better readability */
+}
+
+.browse-courses .cta {
+  background-color: #004080;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 5px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.browse-courses .cta:hover {
+  background-color: #002d5a; /* Darker shade on hover */
+}
+
+/* Studios Section */
+.studios {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+}
+
+.studios h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.studios p {
+  font-size: 1.2em;
+  margin-bottom: 40px;
+}
+
+.studio-cards {
+  display: flex;
+  flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
+  gap: 20px; /* Adds consistent spacing between cards */
+  justify-content: center; /* Centers the cards on smaller screens */
+}
+
+.studio-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  flex: 1 1 100%; /* Default: Full width for mobile-first */
+  max-width: 100%; /* Prevents cards from exceeding their allocated space */
+}
+
+.studio-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.studio-card h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.studio-card p {
+  font-size: 1em;
+  color: #555;
+}
+
+/* Partners Section */
+.partners {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+}
+
+.partners h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.partners p {
+  font-size: 1.2em;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+.partner-logos {
+  display: flex;
+  flex-wrap: wrap; /* Allows logos to wrap on smaller screens */
+  justify-content: center; /* Centers the logos */
+  gap: 20px; /* Adds spacing between logos */
+}
+
+.partner-logos img {
+  width: 150px; /* Adjust the size of the logos */
+  height: auto; /* Maintains the aspect ratio */
+  object-fit: contain; /* Ensures the logos fit within their container */
+  border-radius: 5px; /* Optional: Adds rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+}
+
+/* Responsive Design */
+
+/* Medium screens (tablets) */
+@media (min-width: 768px) {
+  .studio-card {
+    flex: 1 1 calc(50% - 20px); /* Two cards per row */
+    max-width: calc(50% - 20px);
+  }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 1024px) {
+  .studio-card {
+    flex: 1 1 calc(33.333% - 20px); /* Three cards per row */
+    max-width: calc(33.333% - 20px);
+  }
+}
+
+/* Team Section */
+.team {
+  padding: 20px;
+  background-color: #e8e8e8;
+  text-align: center;
+}
+
+.team h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+
+.team ul {
+  list-style: none;
+  padding: 0;
+}
+
+.team ul li {
+  margin-bottom: 10px;
+  font-size: 1em;
+}
+
+/* Team-2 Section */
+.team-2 {
+  position: relative;
+  width: 100%;
+  height: auto; /* Adjusts height based on the image's aspect ratio */
+  background-color: #f4f4f4; /* Optional: Add a background color for fallback */
+  display: flex;
+  justify-content: center; /* Centers the image horizontally */
+  align-items: center; /* Centers the image vertically */
+  overflow: hidden; /* Ensures no overflow occurs */
+  padding: 0; /* Removes any padding */
+}
+
+.team-2 img {
+  width: 100%;
+  height: auto; /* Maintains the aspect ratio of the image */
+  object-fit: contain; /* Ensures the entire image is visible without cropping */
+}
+
+/* Contact Section */
+.contact {
+  padding: 20px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+
+.contact ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact ul li {
+  margin-bottom: 10px;
+  font-size: 1em;
+}
+
+.contact a {
+  color: #004080;
+  text-decoration: none;
+}
+
+footer {
+  background-color: #004080;
+  color: #fff;
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.landing-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: 20px auto;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Responsive Design */
+
+/* Small screens (mobile-first approach) */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column; /* Stack navigation items vertically */
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-size: 2em; /* Adjust font size for smaller screens */
+  }
+
+  .hero p {
+    font-size: 1em; /* Adjust font size for readability */
+  }
+
+  .steps {
+    flex-direction: column; /* Stack steps vertically */
+    align-items: center;
+  }
+
+  .step {
+    width: 90%; /* Reduce width for smaller screens */
+    margin-bottom: 20px;
+  }
+
+  .create-course {
+    padding: 50px 10px; /* Reduce padding for smaller screens */
+    text-align: center; /* Center-align text for better readability */
+    align-items: center; /* Center content horizontally */
+  }
+
+  .create-course h2 {
+    font-size: 2em; /* Adjust font size for smaller screens */
+  }
+
+  .create-course p {
+    font-size: 1em; /* Adjust font size for readability */
+    max-width: 90%; /* Reduce text width for smaller screens */
+  }
+
+  .create-course .cta {
+    font-size: 1em; /* Adjust button size */
+    padding: 10px 20px;
+  }
+
+  .learn-course-creation h2,
+  .browse-courses h2,
+  .studios h2,
+  .team h2,
+  .contact h2 {
+    font-size: 1.5em; /* Adjust section headings for smaller screens */
+  }
+
+  .learn-course-creation p,
+  .browse-courses p,
+  .studios .studio p,
+  .team ul li,
+  .contact ul li {
+    font-size: 1em; /* Adjust paragraph and list item font sizes */
+  }
+
+  .team ul {
+    padding: 0 10px; /* Add padding for better spacing */
+  }
+}
+
+/* Medium screens (tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  nav ul {
+    justify-content: space-between; /* Adjust navigation alignment */
+  }
+
+  .steps {
+    flex-wrap: wrap; /* Allow steps to wrap */
+    justify-content: center;
+  }
+
+  .step {
+    width: 45%; /* Adjust step width for medium screens */
+    margin-bottom: 20px;
+  }
+
+  .create-course h2 {
+    font-size: 2.5em; /* Slightly larger font size for medium screens */
+  }
+
+  .create-course p {
+    font-size: 1.2em; /* Adjust paragraph font size */
+  }
+
+  .create-course .cta {
+    font-size: 1.1em; /* Adjust button size */
+  }
+
+  .learn-course-creation h2,
+  .browse-courses h2,
+  .studios h2,
+  .team h2,
+  .contact h2 {
+    font-size: 1.8em; /* Adjust section headings */
+  }
+
+  .learn-course-creation p,
+  .browse-courses p,
+  .studios .studio p,
+  .team ul li,
+  .contact ul li {
+    font-size: 1.1em; /* Adjust paragraph and list item font sizes */
+  }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 1025px) {
+  .create-course {
+    padding: 100px 50px; /* Increase padding for larger screens */
+    text-align: right; /* Align text to the right */
+    align-items: flex-end; /* Align content to the right */
+  }
+
+  .create-course h2 {
+    font-size: 3em; /* Larger font size for desktops */
+  }
+
+  .create-course p {
+    font-size: 1.5em; /* Larger paragraph font size */
+  }
+
+  .create-course .cta {
+    font-size: 1.2em; /* Larger button size */
+  }
+
+  .steps {
+    justify-content: space-around; /* Spread steps evenly */
+  }
+
+  .step {
+    width: 30%; /* Restore original step width */
+  }
+
+  .learn-course-creation h2,
+  .browse-courses h2,
+  .studios h2,
+  .team h2,
+  .contact h2 {
+    font-size: 2em; /* Restore original section heading sizes */
+  }
+
+  .learn-course-creation p,
+  .browse-courses p,
+  .studios .studio p,
+  .team ul li,
+  .contact ul li {
+    font-size: 1.2em; /* Restore original paragraph and list item font sizes */
+  }
+}
