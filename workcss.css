@@ -87,6 +87,11 @@ body {
   margin-bottom: 10px;
 }
 
+.card h4 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
 .card p {
   font-size: 1em;
   margin-bottom: 15px;
@@ -104,6 +109,17 @@ body {
 
 .card .cta:hover {
   background-color: #002d5a;
+}
+
+/* Category */
+.category {
+  margin-bottom: 40px;
+}
+
+.category h3 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: #004080;
 }
 
 /* Call to Action */
@@ -124,4 +140,86 @@ footer {
   color: #fff;
   text-align: center;
   padding: 10px 0;
+}
+
+/* Career Growth Section */
+.career-growth {
+  padding: 60px 20px;
+  background-color: #f5f7fa;
+  text-align: center;
+}
+
+.career-growth h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #004080;
+}
+
+.career-growth p {
+  font-size: 1.2em;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  color: #555;
+}
+
+.career-growth .categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.career-growth .category {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  flex: 1 1 calc(33.333% - 20px);
+  max-width: calc(33.333% - 20px);
+}
+
+.career-growth .category h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #004080;
+}
+
+.career-growth .category p {
+  font-size: 1em;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.career-growth .category .cta {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0066ff;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.career-growth .category .cta:hover {
+  background-color: #004080;
+}
+
+.career-growth .cta.primary {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #004080;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.career-growth .cta.primary:hover {
+  background-color: #002d5a;
 }
