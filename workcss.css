@@ -142,6 +142,7 @@ footer {
   padding: 10px 0;
 }
 
+
 /* Career Growth Section */
 .career-growth {
   padding: 60px 20px;
@@ -164,10 +165,9 @@ footer {
 
 .career-growth .categories {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin-bottom: 40px;
+  flex-wrap: wrap; /* Ensures responsiveness */
+  gap: 20px; /* Adds spacing between cards */
+  justify-content: center; /* Centers the cards */
 }
 
 .career-growth .category {
@@ -177,8 +177,8 @@ footer {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
   text-align: center;
-  flex: 1 1 calc(33.333% - 20px);
-  max-width: calc(33.333% - 20px);
+  flex: 1 1 calc(33.333% - 20px); /* Ensures three cards per row */
+  max-width: calc(33.333% - 20px); /* Prevents cards from exceeding their allocated space */
 }
 
 .career-growth .category h3 {
@@ -216,7 +216,7 @@ footer {
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: 40px;
   transition: background-color 0.3s ease;
 }
 
