@@ -672,3 +672,55 @@ footer {
     font-size: 1.2em; /* Restore original paragraph and list item font sizes */
   }
 }
+
+/* Portfolio Section */
+.courses-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.course-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensures the image stays within the card */
+  text-align: center;
+  width: calc(33.333% - 20px); /* Three cards per row */
+  max-width: 300px; /* Optional: Set a max width for the cards */
+}
+
+.course-card img {
+  width: 100%; /* Makes the image fill the width of the card */
+  height: 200px; /* Sets a fixed height for the image */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+.course-card h3 {
+  font-size: 1.2em;
+  margin: 10px 0;
+  color: #004080;
+}
+
+.course-card p {
+  font-size: 1em;
+  margin: 10px 0;
+  color: #555;
+}
+
+.course-card .course-link {
+  display: inline-block;
+  margin: 10px 0;
+  padding: 10px 20px;
+  background-color: #004080;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.course-card .course-link:hover {
+  background-color: #002d5a;
+}

@@ -1,234 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qraft Academy - Types of Economies</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      margin: 40px;
+    }
 
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    .table-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      overflow-x: auto;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-        h1, h2 {
-            text-align: center;
-            color: #333;
-        }
-        .navigation {
-            background-color: #2196f3;
-            padding: 10px;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .navigation img {
-            height: 50px; /* Adjust logo height */
-        }
-        .navigation ul {
-            list-style: none;
-            padding: 0;
-        }
-        .navigation li {
-            display: inline;
-            margin-right: 20px;
-        }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .card {
-            width: 300px;
-            margin: 15px;
-            padding: 20px;
-            border-radius: 10px;
-            color: black;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .card img, .card svg {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
-        .care-economy { background-color: #4caf50; }
-        .gig-economy { background-color: #f6b93b; }
-        .digital-economy { background-color: #2196f3; }
-        .knowledge-economy { background-color: #3f51b5; }
-        .innovation-economy { background-color: #e91e63; }
-        .creative-economy { background-color: #ff9800; }
-        .card-title {
-            font-size: 1.5em;
-            margin: 10px 0;
-        }
-        .section {
-            margin-top: 40px;
-        }
-        .spaces {
-            display: flex;
-            justify-content: center;
-        }
-        .space-card {
-            margin: 15px;
-            padding: 20px;
-            background-color: #e0e0e0;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
-        .search-bar {
-            text-align: center;
-            margin: 20px 0;
-        }
-    </style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 20px;
+      border-bottom: 1px solid #eee;
+      vertical-align: top;
+    }
+
+    th {
+      background-color: #0066ff;
+      color: white;
+      font-size: 1.1em;
+    }
+
+    td strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    td ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      th, td {
+        padding: 15px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="navigation">
-        <img src="/images/logo.png" alt="Qraft Academy Logo"> <!-- Add your logo image here -->
-        <ul>
-            <li>Products</li>
-            <li>Spaces</li>
-            <li>Courses</li>
-            <li>Programs</li>
-            <li>Projects</li>
-            <li>Media</li>
-            <li>About</li>
-        </ul>
-    </div>
 
-    <h1>Welcome to Qraft Academy</h1>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Focus Areas</th>
+          <th>Key Activities</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>🧑‍💼 <strong>Employees</strong></td>
+          <td>
+            - Career advancement <br>
+            - Productivity <br>
+            - Skill development in company roles
+          </td>
+          <td>
+            <ul>
+              <li><strong>Apprenticeship Program</strong> – Hands-on learning within structured roles</li>
+              <li><strong>Leadership Fellowship</strong> – For executives and managers to grow strategically</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>🧑‍🎨 <strong>Freelancers</strong></td>
+          <td>
+            - Client acquisition <br>
+            - Personal branding <br>
+            - Business self-management
+          </td>
+          <td>
+            <ul>
+              <li><strong>Freelancers Bootcamp</strong> – Pitch, price, and manage client projects</li>
+              <li><strong>Business Acceleration Month</strong> – Events and mentorship to scale your freelance work</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>👩‍💼 <strong>Entrepreneurs</strong></td>
+          <td>
+            - Business growth <br>
+            - Leadership <br>
+            - Scaling and strategy
+          </td>
+          <td>
+            <ul>
+              <li><strong>Entrepreneurship Masterminds</strong> – Peer-led growth sessions and expert coaching</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-    <div class="section">
-        <h2>Products</h2>
-        <div class="container">
-            <div class="card">
-                <div class="card-title">WorkMasters (Career Development)</div>
-                <a href="#" class="btn">Apply Now</a>
-            </div>
-            <div class="card">
-                <div class="card-title">CourseMasters (Course Development)</div>
-                <a href="#" class="btn">Contact Sales</a>
-            </div>
-            <div class="card">
-                <div class="card-title">TechMasters</div>
-            </div>
-            <div class="card">
-                <div class="card-title">CapitalMasters</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>Departments/Spaces</h2>
-        <div class="spaces">
-            <div class="space-card">Qraft Labs</div>
-            <div class="space-card">Qraft Solutions Hub</div>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>Courses</h2>
-        <div class="search-bar">
-            <input type="text" placeholder="Search courses..." class="input-field">
-        </div>
-        <div class="container">
-            <div class="card">
-                <div class="card-title">Productivity and Professional Development Courses</div>
-            </div>
-            <div class="card">
-                <div class="card-title">Personal Development and Well-being Courses</div>
-            </div>
-            <div class="card">
-                <div class="card-title">Leadership Development Courses</div>
-            </div>
-            <div class="card">
-                <div class="card-title">Sustainability and Growth Courses</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>Programs</h2>
-        <p>Future of Work Consortium</p>
-        <p>Special Groups Program for Women, Youths, PWDs, and Refugees</p>
-    </div>
-
-    <div class="section">
-        <h2>Projects under Future of Work Consortium</h2>
-        <ul>
-            <li>Care Economy</li>
-            <li>Digital Economy</li>
-            <li>Gig Economy</li>
-            <li>Creative Economy</li>
-            <li>Innovation Economy</li>
-            <li>Knowledge Economy</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Media</h2>
-        <ul>
-            <li>Blogs</li>
-            <li>Video</li>
-            <li>Audio</li>
-            <li>Social Media</li>
-            <li>Live Meetings</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>About</h2>
-        <ul>
-            <li>Vision</li>
-            <li>Mission</li>
-            <li>Core Values</li>
-            <li>Team</li>
-            <li>Board and Consortium Boards</li>
-        </ul>
-    </div>
-
-    <h1>Types of Economies</h1>
-    <div class="container">
-        <div class="card care-economy">
-            <img src="/images/CARE_ECO.png" alt="Care Economy Image">
-            <div class="card-title">Care Economy</div>
-        </div>
-        <div class="card gig-economy">
-            <img src="/images/GIG_ECO.png" alt="Gig Economy Image">
-            <div class="card-title">Gig Economy</div>
-            <p>I am a simple card, good at containing small bits of information.</p>
-            <a href="gigeconomy.html" class="btn">Learn More</a>
-        </div>
-        <div class="card digital-economy">
-            <img src="/images/DIGITAL_ECO.png" alt="Digital Economy Image">
-            <div class="card-title">Digital Economy</div>
-        </div>
-        <div class="card knowledge-economy">
-            <img src="/images/KNOWLEDGE_ECO.png" alt="Knowledge Economy Image">
-            <div class="card-title">Knowledge Economy</div>
-        </div>
-        <div class="card innovation-economy">
-            <img src="/images/INNOVATION_ECO.png" alt="Innovation Economy Image">
-            <div class="card-title">Innovation Economy</div>
-        </div>
-        <div class="card creative-economy">
-            <img src="/images/CREATIVE_ECO.png" alt="Creative Economy Image">
-            <div class="card-title">Creative Economy</div>
-        </div>
-    </div>
 </body>
 </html>
+
+
