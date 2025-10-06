@@ -1,0 +1,63 @@
+{
+  "visionBlock": {
+    "slogan": "Learn. Work. Achieve.",
+    "statement": "Empowering people to Learn, Work, and Achieve by shaping the future of work and education technology.",
+    "subheading": "We manage the future of work and edtech.",
+    "heroMedia": {
+      "type": "svg",
+      "src": "assets/hero-motif.svg",
+      "alt": "Abstract graphic showing three pillars: Learn, Work, Achieve"
+    }
+  },
+  "products": [
+    { "id": "workmasters", "name": "WorkMasters", "description": "Work Readiness, Employability, Freelancing, Entrepreneurship", "icon": "images/workmasters.jpg", "relatedGoals": ["g1"] },
+    { "id": "coursemasters", "name": "CourseMasters", "description": "Online course creation for businesses and individuals", "icon": "images/coursemasters.jpg", "relatedGoals": ["g2"] },
+    { "id": "capitalmasters", "name": "CapitalMasters", "description": "Financial literacy, Investment Club, fundraising support", "icon": "images/capitalmasters.jpg", "relatedGoals": ["g3"] },
+    { "id": "techmasters", "name": "TechMasters", "description": "Technical skilling, R&D, product development support", "icon": "images/techmasters.jpg", "relatedGoals": ["g4"] }
+  ],
+  "goals": [
+    {
+      "id": "g1",
+      "title": "Scale employability programs",
+      "owner": "Head of WorkMasters",
+      "dueDate": "2026-12-31",
+      "status": "in-progress",
+      "objectives": [
+        { "id": "o1", "title": "Grow WorkMasters to 20,000 learners", "metric": "learners", "target": 20000, "current": 8200, "unit": "count", "owner": "Program Manager", "dueDate": "2026-12-31", "status": "in-progress" },
+        { "id": "o2", "title": "Launch 10 partner employers", "metric": "partners", "target": 10, "current": 2, "unit": "count", "owner": "Partnerships Lead", "dueDate": "2025-12-31", "status": "planned" }
+      ]
+    },
+    {
+      "id": "g2",
+      "title": "Build a robust course marketplace",
+      "owner": "Head of CourseMasters",
+      "dueDate": "2026-06-30",
+      "status": "planned",
+      "objectives": [
+        { "id": "o3", "title": "Grow CourseMasters course catalog to 120 online courses", "metric": "courses", "target": 120, "current": 45, "unit": "count", "owner": "Content Lead", "dueDate": "2026-12-31", "status": "in-progress" }
+      ]
+    },
+    {
+      "id": "g3",
+      "title": "Increase financial inclusion",
+      "owner": "Head of CapitalMasters",
+      "dueDate": "2025-12-31",
+      "status": "in-progress",
+      "objectives": [
+        { "id": "o4", "title": "Deliver financial literacy to 5,000 people", "metric": "participants", "target": 5000, "current": 3200, "unit": "count", "owner": "Community Lead", "dueDate": "2025-12-31", "status": "in-progress" }
+      ]
+    }
+  ],
+  "milestones": [
+    { "id": "m1", "date": "2025-01-15", "description": "Q1 2025: Launch 10 new WorkMasters modules; 2 partner organizations joined.", "status": "achieved", "productLinks": ["workmasters"], "owner": "Program Manager", "impact": { "beneficiaries": 1200 } },
+    { "id": "m2", "date": "2025-09-01", "description": "Pilot CourseMasters marketplace beta", "status": "in-progress", "productLinks": ["coursemasters"], "owner": "Head of CourseMasters", "impact": { "beneficiaries": 300 } }
+  ],
+  "achievements": [
+    { "id": "a1", "title": "Learners served", "year": 2024, "metric": "learners", "value": 5400, "narrative": "Reached 5,400 learners across WorkMasters and CourseMasters.", "beneficiaries": 5400 },
+    { "id": "a2", "title": "Partnerships formed", "year": 2024, "metric": "partners", "value": 12, "narrative": "12 strategic partner orgs joined our programs.", "beneficiaries": 12 }
+  ],
+  "communities": [
+    { "id": "c1", "name": "Future of Work Tour", "focusAreas": ["events", "engagement"], "events": [ { "title": "Kampala Tour", "date": "2025-11-10", "region": "Uganda" } ] }
+  ],
+  "lastUpdated": "2025-10-06T12:00:00Z"
+}

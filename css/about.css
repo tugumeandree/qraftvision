@@ -1,0 +1,37 @@
+:root{
+  --brand-1:#0b6e4f;
+  --brand-2:#06a77d;
+  --accent:#ffb703;
+  --bg:#ffffff;
+  --muted:#6b7280;
+  --card-bg:#f8fafc;
+  --max-width:1100px;
+}
+*{box-sizing:border-box}
+body{font-family:Inter,Segoe UI,Arial,sans-serif;color:#0f172a;margin:0;background:var(--bg);line-height:1.45}
+.container{max-width:var(--max-width);margin:0 auto;padding:24px}
+.site-header{background:linear-gradient(180deg,rgba(6,167,125,0.06),transparent);padding:28px 0}
+.hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center}
+.hero h1{font-size:clamp(28px,4vw,40px);margin:0;color:var(--brand-1)}
+.hero p.lead{margin:12px 0;color:var(--muted);font-size:1.05rem}
+.hero .cta{display:flex;gap:12px;margin-top:16px}
+.btn{background:var(--brand-2);color:white;padding:10px 14px;border-radius:8px;border:0;cursor:pointer}
+.btn.secondary{background:transparent;border:1px solid rgba(15,23,42,0.06);color:var(--brand-1)}
+.emblem{background:linear-gradient(135deg,var(--brand-2),var(--accent));padding:18px;border-radius:12px;color:white;text-align:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:24px}
+.card{background:var(--card-bg);padding:14px;border-radius:10px;box-shadow:0 1px 0 rgba(15,23,42,0.03)}
+.goal-card{cursor:pointer}
+.goal-card h3{margin:0 0 8px 0}
+.objective-list{margin:8px 0 0 0;padding:0;list-style:none}
+.objective{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px dashed rgba(15,23,42,0.03)}
+.small{font-size:.9rem;color:var(--muted)}
+.donut{width:48px;height:48px;border-radius:50%;background:conic-gradient(var(--brand-2) 0 var(--p,40%), #e6eef1 var(--p,40%) 100%);display:inline-block}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.timeline{margin-top:20px}
+.timeline-item{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid rgba(15,23,42,0.03)}
+.kpis{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+.kpi{background:linear-gradient(180deg,white,#fbfdff);padding:12px;border-radius:10px;min-width:160px;flex:1}
+.carousel{display:flex;gap:12px;overflow:auto;padding:12px 0}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.high-contrast{background:#000;color:#fff}
+@media (max-width:800px){.hero{grid-template-columns:1fr;}.emblem{margin-top:12px}}

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>About — Qraft Academy</title>
+	<link rel="stylesheet" href="css/about.css">
+	<meta name="description" content="Qraft Academy — Learn. Work. Achieve. We manage the future of work and edtech.">
+</head>
+<body>
+	<header class="site-header">
+		<div class="container">
+			<div class="hero">
+				<div>
+					<div class="emblem" aria-hidden="true">Learn • Work • Achieve</div>
+					<h1 id="slogan">Learn. Work. Achieve.</h1>
+					<p id="vision-statement" class="lead">Through continuous learning and meaningful productivity, we empower every worker to achieve measurable results for global and generational impact.</p>
+					<p id="vision-sub" class="small">We manage the future of work and edtech.</p>
+					<div class="cta">
+						<button class="btn" onclick="location.hash='vision'">Explore Our Vision</button>
+						<button class="btn secondary" onclick="location.hash='achievements'">See Our Impact</button>
+						<button id="contrast-toggle" class="btn secondary" aria-pressed="false">High contrast</button>
+					</div>
+				</div>
+				<aside class="card" aria-label="Vision emblem">
+					<h3 class="small">Our three pillars</h3>
+					<div style="display:grid;grid-template-columns:1fr;gap:8px;">
+						<div><strong>Learn</strong><div class="small">Courses, creation, content</div></div>
+						<div><strong>Work</strong><div class="small">Employability, partnerships</div></div>
+						<div><strong>Achieve</strong><div class="small">Impact, funding, scale</div></div>
+					</div>
+				</aside>
+			</div>
+		</div>
+	</header>
+
+	<main class="container">
+		<section id="vision" aria-labelledby="vision-heading">
+			<h2 id="vision-heading">Vision</h2>
+			<p class="small">Through continuous learning and meaningful productivity, we empower every worker to achieve measurable results for global and generational impact.</p>
+		</section>
+
+		<section id="products" aria-labelledby="products-heading">
+			<h2 id="products-heading">Products & Programs</h2>
+			<div class="filters">
+				<label for="product-filter" class="small">Filter:</label>
+				<select id="product-filter">
+					<option value="all">All</option>
+					<option value="workmasters">WorkMasters</option>
+					<option value="coursemasters">CourseMasters</option>
+					<option value="capitalmasters">CapitalMasters</option>
+					<option value="techmasters">TechMasters</option>
+				</select>
+			</div>
+			<div id="products-grid" class="grid" role="list"></div>
+		</section>
+
+		<section id="goals" aria-labelledby="goals-heading">
+			<h2 id="goals-heading">Goals & Objectives</h2>
+			<div id="goals-grid" class="grid" role="list"></div>
+		</section>
+
+		<section id="roadmap" aria-labelledby="roadmap-heading">
+			<h2 id="roadmap-heading">Milestones & Roadmap</h2>
+			<div class="timeline" id="timeline"></div>
+		</section>
+
+		<section id="achievements" aria-labelledby="achievements-heading">
+			<h2 id="achievements-heading">Achievements & Impact</h2>
+			<div id="kpis" class="kpis"></div>
+			<div class="carousel" aria-live="polite" aria-label="Stories carousel">
+				<!-- stories will go here -->
+			</div>
+		</section>
+
+		<section id="community" aria-labelledby="community-heading">
+			<h2 id="community-heading">Community & Programs</h2>
+			<p class="small">Spotlight on the Future of Work Tour and inclusive programs.</p>
+		</section>
+
+		<section id="governance" aria-labelledby="governance-heading" class="card">
+			<h3 id="governance-heading">Governance & Data</h3>
+			<p class="small">Last updated: <span id="last-updated">—</span></p>
+			<p class="small">Data provenance and methodology should be clearly listed here.</p>
+		</section>
+	</main>
+
+	<footer class="container small" style="padding:24px 24px 60px 24px">
+		<div>© Qraft Academy • <a href="README.md">About this page</a></div>
+	</footer>
+
+	<script src="js/about.js"></script>
+	<script>document.getElementById('last-updated').textContent = new Date().toISOString().split('T')[0];</script>
+</body>
+</html>
