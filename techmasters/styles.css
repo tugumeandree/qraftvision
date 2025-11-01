@@ -1,0 +1,112 @@
+:root{
+  --bg:#030617; /* deep near-black */
+  --panel:#071226; /* dark blue */
+  --accent:#00e6ff; /* electric cyan */
+  --muted:#9aa6b2;
+  --glass: rgba(255,255,255,0.03);
+  --radius:12px;
+  --max-width:1200px;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+/* Mobile-first base */
+body.tm-root{
+  margin:0;
+  background:var(--bg);
+  color:#dbeef7;
+  -webkit-font-smoothing:antialiased;
+}
+.app-container{max-width:var(--max-width);margin:0 auto;padding:16px}
+
+/* Header */
+.tm-header{position:sticky;top:0;z-index:40;background:linear-gradient(180deg,rgba(0,0,0,0.35),transparent);backdrop-filter:blur(6px);border-radius:8px}
+.tm-nav{display:flex;align-items:center;justify-content:space-between;padding:10px 16px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand-icon i{width:26px;height:26px;color:var(--accent)}
+.brand-text{color:#fff;font-weight:700;text-decoration:none}
+.brand-text .muted{color:var(--accent);font-weight:800;margin-left:4px}
+
+.nav-links{display:none;gap:20px}
+.nav-links a{color:var(--muted);text-decoration:none;font-weight:600}
+.nav-actions{display:flex;align-items:center;gap:8px}
+.icon-btn{background:transparent;border:0;color:var(--muted);cursor:pointer;padding:8px;border-radius:8px}
+.apply-btn{background:linear-gradient(90deg,var(--accent),#00b5ff);color:#001; padding:8px 12px;border-radius:8px;font-weight:700}
+
+/* Hero */
+.hero{margin-top:18px;padding:26px;border-radius:14px;background:linear-gradient(180deg, rgba(0,30,45,0.35), rgba(0,10,20,0.6));overflow:hidden;position:relative}
+.hero-inner{display:flex;gap:18px;align-items:center}
+.hero-copy{flex:1}
+.hero-title{font-size:28px;line-height:1.02;margin:0 0 8px;color:#e7fbff}
+.hero-sub{color:var(--muted);margin:0 0 18px}
+.hero-ctas{display:flex;gap:12px}
+.btn-primary{background:linear-gradient(90deg,var(--accent),#00aaff);color:#001;border-radius:10px;padding:12px 18px;font-weight:700;text-decoration:none;box-shadow:0 6px 20px rgba(0,230,255,0.12)}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted);padding:10px 14px;border-radius:10px;text-decoration:none}
+.hero-visual{width:40%;min-height:160px}
+.bg-net{width:100%;height:100%;display:block;opacity:0.9}
+
+/* Cards & grids */
+.section{padding:28px 8px 18px}
+.container{max-width:var(--max-width);margin:0 auto}
+.section-title{font-size:18px;margin:0 0 6px;color:#eafcff}
+.section-sub{color:var(--muted);margin:0 0 18px}
+.schools-grid{display:grid;grid-template-columns:1fr;gap:12px}
+.card.school{background:var(--panel);padding:16px;border-radius:var(--radius);display:flex;align-items:center;gap:12px}
+.school .icon-wrap i{width:40px;height:40px;color:var(--accent)}
+.programs-grid{display:grid;grid-template-columns:1fr;gap:12px}
+.program-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:16px;border-radius:14px}
+.program-card .card-top i{width:36px;height:36px;color:var(--accent)}
+.meta{color:var(--muted);font-size:13px;margin:6px 0}
+.card-actions{margin-top:12px}
+.btn-outline{border:1px solid rgba(0,230,255,0.12);color:var(--accent);background:transparent;padding:8px 12px;border-radius:8px;text-decoration:none}
+.dark-section{background:linear-gradient(180deg, rgba(1,10,20,0.6), rgba(0,0,0,0.6));border-radius:12px}
+
+/* Features */
+.features-grid{display:grid;grid-template-columns:1fr;gap:12px}
+.feature{background:var(--panel);padding:16px;border-radius:12px}
+.feature i{width:34px;height:34px;color:var(--accent);margin-bottom:8px}
+
+/* Sandbox chat */
+.sandbox-wrap{display:flex;gap:12px;flex-direction:column}
+.chat-window{background:rgba(255,255,255,0.02);border-radius:12px;padding:12px;display:flex;flex-direction:column;min-height:200px}
+.messages{flex:1;display:flex;flex-direction:column;gap:8px;overflow:auto;padding-right:6px}
+.msg{max-width:80%;padding:10px;border-radius:10px}
+.msg.user{align-self:flex-end;background:linear-gradient(90deg,#053743,#0a5a66);color:#e6fff8}
+.msg.ai{align-self:flex-start;background:rgba(0,230,255,0.06);border:1px solid rgba(0,230,255,0.08);color:var(--muted)}
+.chat-form{display:flex;gap:8px;margin-top:10px}
+.chat-input{flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+.small{padding:6px 10px;font-size:13px}
+.sandbox-help{color:var(--muted);margin-top:12px}
+
+/* Footer */
+.tm-footer{margin-top:18px;padding:16px;text-align:center;color:var(--muted)}
+
+/* Desktop (md & lg) - these emulate 'sm:', 'md:', 'lg:' prefixes by naming conventions in comments */
+@media (min-width:640px){
+  .nav-links{display:flex}
+  .hero-title{font-size:36px}
+  .schools-grid{grid-template-columns:repeat(2,1fr)}
+  .programs-grid{grid-template-columns:repeat(2,1fr)}
+  .features-grid{grid-template-columns:repeat(2,1fr)}
+  .sandbox-wrap{flex-direction:row}
+}
+
+@media (min-width:1024px){
+  .app-container{padding:20px}
+  .hero-inner{gap:32px}
+  .hero-visual{width:50%}
+  .schools-grid{grid-template-columns:repeat(3,1fr)}
+  .programs-grid{grid-template-columns:repeat(3,1fr)}
+  .features-grid{grid-template-columns:repeat(3,1fr)}
+  .hero-title{font-size:48px}
+}
+
+/* Accessibility focus */
+.icon-btn:focus, .btn-primary:focus, .btn-outline:focus {outline:2px solid rgba(0,230,255,0.12);outline-offset:2px}
+
+/* Example utility-like classes using escaped colon to mimic 'sm:' prefixes if author wants to use them */
+.sm\:grid-cols-2{grid-template-columns:repeat(2,1fr)}
+.md\:grid-cols-3{grid-template-columns:repeat(3,1fr)}
+.lg\:text-6xl{font-size:48px}
+
+/* small tweaks */
+.muted{color:var(--muted)}
