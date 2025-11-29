@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses - 90 Days Accelerator</title>
+  <link rel="stylesheet" href="workcss.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <a href="workmasters.html" class="logo">
+          <img src="./images/wm.png" alt="WorkMasters Logo" style="height: 50px;">
+        </a>
+        <ul class="nav-links">
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="courses.html" class="active">Courses</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="marketplace.html">Job Board</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="#" id="logoutBtn">Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="courses-main">
+    <div class="container">
+      <h1>Course Catalog</h1>
+      
+      <!-- Filter Options -->
+      <div class="filter-section">
+        <div class="filter-group">
+          <label for="categoryFilter">Category:</label>
+          <select id="categoryFilter">
+            <option value="all">All Categories</option>
+            <option value="productivity">Productivity</option>
+            <option value="wellbeing">Wellbeing</option>
+            <option value="leadership">Leadership</option>
+            <option value="management">Management</option>
+            <option value="digital">Digital Skills</option>
+            <option value="financial">Financial Literacy</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="phaseFilter">Phase:</label>
+          <select id="phaseFilter">
+            <option value="all">All Phases</option>
+            <option value="1">Phase 1 (Weeks 1-4)</option>
+            <option value="2">Phase 2 (Weeks 5-8)</option>
+            <option value="3">Phase 3 (Weeks 9-12)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Courses Grid -->
+      <div class="courses-grid" id="coursesGrid">
+        <!-- Courses will be dynamically loaded -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Course Detail Modal -->
+  <div id="courseModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="courseDetailContent">
+        <!-- Course details will be loaded here -->
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Qraft Solutions. All Rights Reserved.</p>
+  </footer>
+
+  <script src="auth.js"></script>
+  <script src="courses.js"></script>
+</body>
+</html>

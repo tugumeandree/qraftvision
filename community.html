@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community - 90 Days Accelerator</title>
+  <link rel="stylesheet" href="workcss.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <a href="workmasters.html" class="logo">
+          <img src="./images/wm.png" alt="WorkMasters Logo" style="height: 50px;">
+        </a>
+        <ul class="nav-links">
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="community.html" class="active">Community</a></li>
+          <li><a href="marketplace.html">Job Board</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="#" id="logoutBtn">Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="community-main">
+    <div class="container">
+      <h1>Community Forum</h1>
+      
+      <!-- Create Post Section -->
+      <section class="create-post">
+        <h2>Start a Discussion</h2>
+        <form id="createPostForm">
+          <input type="text" id="postTitle" placeholder="Discussion Title" required>
+          <select id="postCategory" required>
+            <option value="">Select Category</option>
+            <option value="general">General Discussion</option>
+            <option value="phase1">Phase 1 Topics</option>
+            <option value="phase2">Phase 2 Topics</option>
+            <option value="phase3">Phase 3 Topics</option>
+            <option value="networking">Networking</option>
+            <option value="jobs">Job Opportunities</option>
+            <option value="help">Help & Support</option>
+          </select>
+          <textarea id="postContent" placeholder="What's on your mind?" rows="4" required></textarea>
+          <button type="submit" class="cta-button primary">Post Discussion</button>
+        </form>
+      </section>
+
+      <!-- Filter Posts -->
+      <div class="filter-section">
+        <button class="filter-btn active" data-filter="all">All Posts</button>
+        <button class="filter-btn" data-filter="general">General</button>
+        <button class="filter-btn" data-filter="phase1">Phase 1</button>
+        <button class="filter-btn" data-filter="phase2">Phase 2</button>
+        <button class="filter-btn" data-filter="phase3">Phase 3</button>
+        <button class="filter-btn" data-filter="networking">Networking</button>
+        <button class="filter-btn" data-filter="jobs">Jobs</button>
+      </div>
+
+      <!-- Posts List -->
+      <section class="posts-section">
+        <div class="posts-list" id="postsList">
+          <!-- Posts will be dynamically loaded -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Post Detail Modal -->
+  <div id="postModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="postDetailContent">
+        <!-- Post details and comments will be loaded here -->
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Qraft Solutions. All Rights Reserved.</p>
+  </footer>
+
+  <script src="auth.js"></script>
+  <script src="community.js"></script>
+</body>
+</html>

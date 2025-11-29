@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - 90 Days Work Readiness Accelerator</title>
+  <link rel="stylesheet" href="workcss.css">
+  <style>
+    .login-container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 20px;
+    }
+    
+    .login-box {
+      background: white;
+      border-radius: 10px;
+      padding: 40px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    }
+    
+    .login-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .login-header h1 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+    
+    .login-header p {
+      color: #666;
+      font-size: 14px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: #333;
+      font-weight: 500;
+    }
+    
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 14px;
+      transition: border-color 0.3s;
+    }
+    
+    .form-group input:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+    
+    .error-message {
+      color: #e74c3c;
+      font-size: 14px;
+      margin-top: 10px;
+      display: none;
+    }
+    
+    .error-message.show {
+      display: block;
+    }
+    
+    .login-button {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    
+    .login-button:hover {
+      transform: translateY(-2px);
+    }
+    
+    .login-footer {
+      text-align: center;
+      margin-top: 20px;
+      color: #666;
+    }
+    
+    .login-footer a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    .demo-credentials {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      font-size: 13px;
+    }
+    
+    .demo-credentials h4 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    
+    .demo-credentials p {
+      margin: 5px 0;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <div class="login-header">
+        <h1>Welcome Back</h1>
+        <p>Sign in to continue your learning journey</p>
+      </div>
+      
+      <div class="demo-credentials">
+        <h4>📱 Platform Access Includes:</h4>
+        <p>✓ <strong>Dashboard</strong> - Track your progress & stats</p>
+        <p>✓ <strong>Courses</strong> - 12-week curriculum access</p>
+        <p>✓ <strong>Community</strong> - Discussion forums</p>
+        <p>✓ <strong>Job Board</strong> - Opportunities marketplace</p>
+        <p style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #ddd;"><strong>Demo Credentials:</strong></p>
+        <p><strong>User:</strong> demo@example.com / password</p>
+        <p><strong>Admin:</strong> admin@example.com / admin123</p>
+      </div>
+      
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        
+        <div class="error-message" id="errorMessage"></div>
+        
+        <button type="submit" class="login-button">Sign In</button>
+      </form>
+      
+      <div class="login-footer">
+        <p>Don't have an account? <a href="register.html">Register here</a></p>
+        <p><a href="index.html">Back to Home</a></p>
+      </div>
+    </div>
+  </div>
+  
+  <script src="auth.js"></script>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const errorMessage = document.getElementById('errorMessage');
+      
+      const result = auth.login(email, password);
+      
+      if (result.success) {
+        window.location.href = 'dashboard.html';
+      } else {
+        errorMessage.textContent = result.message;
+        errorMessage.classList.add('show');
+      }
+    });
+  </script>
+</body>
+</html>

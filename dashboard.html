@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Dashboard - 90 Days Accelerator</title>
+  <link rel="stylesheet" href="workcss.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <a href="workmasters.html" class="logo">
+          <img src="./images/wm.png" alt="WorkMasters Logo" style="height: 50px;">
+        </a>
+        <ul class="nav-links">
+          <li><a href="dashboard.html" class="active">Dashboard</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="marketplace.html">Job Board</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="#" id="logoutBtn">Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="dashboard-main">
+    <div class="container">
+      <!-- Welcome Section -->
+      <section class="welcome-section">
+        <h1>Welcome back, <span id="userName">Student</span>!</h1>
+        <p>Continue your learning journey</p>
+      </section>
+
+      <!-- Quick Access Panel -->
+      <section class="quick-access-panel">
+        <h2>Quick Access</h2>
+        <div class="quick-links">
+          <a href="courses.html" class="quick-link-card">
+            <div class="quick-icon">📚</div>
+            <h3>My Courses</h3>
+            <p>View enrolled courses</p>
+          </a>
+          <a href="community.html" class="quick-link-card">
+            <div class="quick-icon">💬</div>
+            <h3>Community</h3>
+            <p>Discussion forums</p>
+          </a>
+          <a href="marketplace.html" class="quick-link-card">
+            <div class="quick-icon">💼</div>
+            <h3>Job Board</h3>
+            <p>Find opportunities</p>
+          </a>
+          <a href="admin.html" class="quick-link-card admin-only" id="adminLink" style="display: none;">
+            <div class="quick-icon">⚙️</div>
+            <h3>Admin Panel</h3>
+            <p>Manage platform</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- Stats Cards -->
+      <section class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">📚</div>
+          <div class="stat-info">
+            <h3 id="enrolledCourses">0</h3>
+            <p>Enrolled Courses</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">✅</div>
+          <div class="stat-info">
+            <h3 id="completedCourses">0</h3>
+            <p>Completed</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📈</div>
+          <div class="stat-info">
+            <h3 id="progressPercent">0%</h3>
+            <p>Overall Progress</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🏆</div>
+          <div class="stat-info">
+            <h3 id="certificatesEarned">0</h3>
+            <p>Certificates</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Current Week Section -->
+      <section class="current-week">
+        <h2>Your Current Week</h2>
+        <div class="week-info" id="currentWeekInfo">
+          <div class="week-number">Week <span id="weekNumber">1</span></div>
+          <h3 id="weekTitle">Growth Mindset & Goal Setting</h3>
+          <p id="weekDescription">Vision setting, SMART goals, accountability</p>
+          <div class="week-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" id="weekProgress" style="width: 0%"></div>
+            </div>
+            <span id="weekProgressText">0% Complete</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Continue Learning -->
+      <section class="continue-learning">
+        <h2>Continue Learning</h2>
+        <div class="courses-list" id="continueCoursesContainer">
+          <!-- Courses will be dynamically loaded -->
+        </div>
+      </section>
+
+      <!-- Upcoming Events -->
+      <section class="upcoming-events">
+        <h2>Upcoming Mastermind Meetups</h2>
+        <div class="events-list" id="upcomingEvents">
+          <!-- Events will be dynamically loaded -->
+        </div>
+      </section>
+
+      <!-- Recent Activity -->
+      <section class="recent-activity">
+        <h2>Recent Activity</h2>
+        <div class="activity-list" id="recentActivity">
+          <!-- Activity will be dynamically loaded -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Qraft Solutions. All Rights Reserved.</p>
+  </footer>
+
+  <script src="auth.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

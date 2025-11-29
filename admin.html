@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - 90 Days Accelerator</title>
+  <link rel="stylesheet" href="workcss.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <a href="workmasters.html" class="logo">
+          <img src="./images/wm.png" alt="WorkMasters Logo" style="height: 50px;">
+        </a>
+        <ul class="nav-links">
+          <li><a href="admin.html" class="active">Admin Dashboard</a></li>
+          <li><a href="#" id="logoutBtn">Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="admin-main">
+    <div class="container">
+      <h1>Admin Dashboard</h1>
+      
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="overview">Overview</button>
+        <button class="tab-btn" data-tab="users">Users</button>
+        <button class="tab-btn" data-tab="courses">Courses</button>
+        <button class="tab-btn" data-tab="posts">Forum Posts</button>
+        <button class="tab-btn" data-tab="opportunities">Opportunities</button>
+      </div>
+
+      <!-- Overview Tab -->
+      <div id="overview" class="tab-content active">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon">👥</div>
+            <div class="stat-info">
+              <h3 id="totalUsers">0</h3>
+              <p>Total Users</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">📚</div>
+            <div class="stat-info">
+              <h3 id="totalCourses">0</h3>
+              <p>Total Courses</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">💬</div>
+            <div class="stat-info">
+              <h3 id="totalPosts">0</h3>
+              <p>Forum Posts</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">💼</div>
+            <div class="stat-info">
+              <h3 id="totalOpportunities">0</h3>
+              <p>Job Opportunities</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="recent-registrations">
+          <h2>Recent Registrations</h2>
+          <div id="recentRegistrations"></div>
+        </div>
+      </div>
+
+      <!-- Users Tab -->
+      <div id="users" class="tab-content">
+        <div class="admin-section">
+          <h2>Manage Users</h2>
+          <div id="usersList"></div>
+        </div>
+      </div>
+
+      <!-- Courses Tab -->
+      <div id="courses" class="tab-content">
+        <div class="admin-section">
+          <h2>Manage Courses</h2>
+          <button class="cta-button primary" id="addCourseBtn">Add New Course</button>
+          <div id="coursesList"></div>
+        </div>
+      </div>
+
+      <!-- Posts Tab -->
+      <div id="posts" class="tab-content">
+        <div class="admin-section">
+          <h2>Manage Forum Posts</h2>
+          <div id="postsList"></div>
+        </div>
+      </div>
+
+      <!-- Opportunities Tab -->
+      <div id="opportunities" class="tab-content">
+        <div class="admin-section">
+          <h2>Manage Opportunities</h2>
+          <button class="cta-button primary" id="addOpportunityBtn">Add New Opportunity</button>
+          <div id="opportunitiesList"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Add Course Modal -->
+  <div id="addCourseModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Add New Course</h2>
+      <form id="addCourseForm">
+        <div class="form-group">
+          <label for="courseTitle">Course Title *</label>
+          <input type="text" id="courseTitle" required>
+        </div>
+        <div class="form-group">
+          <label for="courseCategory">Category *</label>
+          <select id="courseCategory" required>
+            <option value="productivity">Productivity</option>
+            <option value="wellbeing">Wellbeing</option>
+            <option value="leadership">Leadership</option>
+            <option value="management">Management</option>
+            <option value="digital">Digital Skills</option>
+            <option value="financial">Financial Literacy</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="coursePhase">Phase *</label>
+          <select id="coursePhase" required>
+            <option value="1">Phase 1</option>
+            <option value="2">Phase 2</option>
+            <option value="3">Phase 3</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="courseWeek">Week Number *</label>
+          <input type="number" id="courseWeek" min="1" max="12" required>
+        </div>
+        <div class="form-group">
+          <label for="courseDescription">Description *</label>
+          <textarea id="courseDescription" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="courseDuration">Duration (minutes) *</label>
+          <input type="number" id="courseDuration" required>
+        </div>
+        <button type="submit" class="cta-button primary">Create Course</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Add Opportunity Modal -->
+  <div id="addOpportunityModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Add New Opportunity</h2>
+      <form id="addOpportunityForm">
+        <div class="form-group">
+          <label for="oppTitle">Title *</label>
+          <input type="text" id="oppTitle" required>
+        </div>
+        <div class="form-group">
+          <label for="oppCompany">Company *</label>
+          <input type="text" id="oppCompany" required>
+        </div>
+        <div class="form-group">
+          <label for="oppType">Type *</label>
+          <select id="oppType" required>
+            <option value="jobs">Full-Time Job</option>
+            <option value="internships">Internship</option>
+            <option value="gigs">Freelance Gig</option>
+            <option value="apprenticeships">Apprenticeship</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="oppLocation">Location *</label>
+          <select id="oppLocation" required>
+            <option value="remote">Remote</option>
+            <option value="hybrid">Hybrid</option>
+            <option value="onsite">On-site</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="oppExperience">Experience Level *</label>
+          <select id="oppExperience" required>
+            <option value="entry">Entry Level</option>
+            <option value="mid">Mid Level</option>
+            <option value="senior">Senior Level</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="oppDescription">Description *</label>
+          <textarea id="oppDescription" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="oppSalary">Salary/Rate</label>
+          <input type="text" id="oppSalary">
+        </div>
+        <button type="submit" class="cta-button primary">Create Opportunity</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Qraft Solutions. All Rights Reserved.</p>
+  </footer>
+
+  <script src="auth.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

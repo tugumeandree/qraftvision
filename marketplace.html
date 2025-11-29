@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Board - 90 Days Accelerator</title>
+  <link rel="stylesheet" href="workcss.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <a href="workmasters.html" class="logo">
+          <img src="./images/wm.png" alt="WorkMasters Logo" style="height: 50px;">
+        </a>
+        <ul class="nav-links">
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="marketplace.html" class="active">Job Board</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="#" id="logoutBtn">Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="marketplace-main">
+    <div class="container">
+      <h1>Talent Marketplace</h1>
+      <p class="subtitle">Exclusive opportunities for program participants</p>
+      
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="jobs">Full-Time Jobs</button>
+        <button class="tab-btn" data-tab="internships">Internships</button>
+        <button class="tab-btn" data-tab="gigs">Freelance Gigs</button>
+        <button class="tab-btn" data-tab="apprenticeships">Apprenticeships</button>
+      </div>
+
+      <!-- Filter Section -->
+      <div class="filter-section">
+        <input type="text" id="searchJobs" placeholder="Search opportunities...">
+        <select id="locationFilter">
+          <option value="all">All Locations</option>
+          <option value="remote">Remote</option>
+          <option value="hybrid">Hybrid</option>
+          <option value="onsite">On-site</option>
+        </select>
+        <select id="experienceFilter">
+          <option value="all">All Levels</option>
+          <option value="entry">Entry Level</option>
+          <option value="mid">Mid Level</option>
+          <option value="senior">Senior Level</option>
+        </select>
+      </div>
+
+      <!-- Opportunities Grid -->
+      <div class="opportunities-grid" id="opportunitiesGrid">
+        <!-- Opportunities will be dynamically loaded -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Opportunity Detail Modal -->
+  <div id="opportunityModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="opportunityDetailContent">
+        <!-- Opportunity details will be loaded here -->
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Qraft Solutions. All Rights Reserved.</p>
+  </footer>
+
+  <script src="auth.js"></script>
+  <script src="marketplace.js"></script>
+</body>
+</html>
