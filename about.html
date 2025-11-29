@@ -1,411 +1,95 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qraft Academy | Rata Qraft Solutions Ltd</title>
-    
-    <!-- Fonts and Materialize CSS -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    
-    <style>
-      /* General Styles */
-      body {
-        font-family: 'Inter', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-        color: #222;
-      }
-    
-      header {
-        background: #0a0a23;
-        color: white;
-        padding: 2rem;
-        text-align: center;
-      }
-    
-      nav {
-        background: #222;
-        padding: 1rem;
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        flex-wrap: wrap; /* Allow wrapping on smaller screens */
-      }
-    
-      nav a {
-        color: white;
-        text-decoration: none;
-        font-weight: 600;
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-      }
-    
-      nav a:hover, nav a.active {
-        background-color: #4caf50;
-        color: white;
-      }
-    
-      section {
-        padding: 4rem 2rem;
-        max-width: 1200px;
-        margin: auto;
-      }
-    
-      h1, h2 {
-        text-align: center;
-      }
-    
-      footer {
-        background: #0a0a23;
-        color: white;
-        padding: 1rem;
-        text-align: center;
-      }
-    
-      /* Card Styles */
-      .card {
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        padding: 1.5rem;
-        background: #fafafa;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-    
-      .card img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        border-radius: 10px;
-        margin-bottom: 10px;
-      }
-    
-      .card-title {
-        font-size: 1.5em;
-        margin: 10px 0;
-      }
-    
-      /* Layout Styles */
-      .container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-      }
-    
-      .cta-buttons {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 1rem;
-      }
-    
-      .cta-buttons button {
-        background: #4caf50;
-        color: white;
-        border: none;
-        padding: 10px 15px;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background 0.3s ease;
-      }
-    
-      .cta-buttons button:hover {
-        background: #388e3c;
-      }
-    
-      /* Spaces and Economies Layout */
-      .spaces, .economies {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-      }
-    
-      /* Navigation Styles for Courses Section */
-      .course-nav {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap; /* Allows wrapping on smaller screens */
-        gap: 1rem;
-        margin-bottom: 2rem;
-      }
-    
-      .course-nav a {
-        text-decoration: none;
-        color: white;
-        font-weight: bold;
-        padding: 0.8rem 1.5rem;
-        border: 1px solid #4caf50;
-        border-radius: 5px;
-        background-color: #4caf50;
-        font-size: 1rem;
-        transition: background-color 0.3s, color 0.3s;
-        text-align: center;
-        white-space: nowrap;
-      }
-    
-      .course-nav a:hover {
-        background-color: #388e3c;
-        color: white;
-      }
-    
-      .course-nav a.active {
-        background-color: #0a0a23;
-        color: white;
-        border-color: #0a0a23;
-      }
-    
-      /* Courses Container */
-      .courses-container {
-        display: grid;
-        gap: 2rem;
-      }
-    
-      .courses {
-        display: none;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.5rem;
-      }
-    
-      .courses.active {
-        display: grid;
-      }
-    
-      .course {
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        padding: 1rem;
-        background: #fafafa;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        text-align: center;
-      }
-    
-      .course h3 {
-        margin: 0.5rem 0;
-        color: #0a0a23;
-      }
-    
-      .course p {
-        margin: 0.5rem 0 1rem;
-        color: #555;
-      }
-    
-      .course a {
-        text-decoration: none;
-        color: white;
-        background: #4caf50;
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
-        transition: background-color 0.3s;
-      }
-    
-      .course a:hover {
-        background: #388e3c;
-      }
-    
-      /* Responsive Design */
-      @media (max-width: 768px) {
-        header {
-          padding: 1.5rem;
-        }
-    
-        nav {
-          flex-direction: column;
-          gap: 1rem;
-        }
-    
-        .card img {
-          height: 150px; /* Reduce image height for smaller screens */
-        }
-    
-        .cta-buttons button {
-          font-size: 0.9rem; /* Adjust button font size */
-          padding: 8px 12px;
-        }
-    
-        .course-nav a {
-          font-size: 0.9rem; /* Adjust font size for smaller screens */
-          padding: 0.6rem 1rem;
-        }
-      }
-    
-      @media (max-width: 480px) {
-        .card img {
-          height: 120px; /* Further reduce image height for very small screens */
-        }
-    
-        .cta-buttons button {
-          font-size: 0.8rem;
-          padding: 6px 10px;
-        }
-    
-        .course-nav a {
-          font-size: 0.8rem;
-          padding: 0.5rem 0.8rem;
-        }
-      }
-    </style>
-    <style>
-      /* Navigation Bar */
-      .navigation {
-        background-color: #222;
-        padding: 1rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between; /* Space between logo and links */
-        position: fixed; /* Fix the navigation bar at the top */
-        top: 0;
-        width: 100%;
-        z-index: 1000; /* Ensure it stays above other elements */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
-      }
-    
-      /* Logo */
-      .navigation img {
-        height: 50px; /* Adjust the logo size */
-        width: auto; /* Maintain aspect ratio */
-      }
-    
-      /* Navigation Links */
-      .navigation nav {
-        display: flex;
-        gap: 1rem;
-      }
-    
-      .navigation nav a {
-        text-decoration: none;
-        color: white;
-        font-weight: 600;
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-      }
-    
-      .navigation nav a:hover, .navigation nav a.active {
-        background-color: #4caf50;
-        color: white;
-      }
-    
-      /* Add padding to the body to prevent content from overlapping the fixed navbar */
-      body {
-        padding-top: 80px; /* Adjust based on the height of the navbar */
-      }
-    </style>
-  </head>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>About — Qraft Academy</title>
+	<link rel="stylesheet" href="css/about.css">
+	<meta name="description" content="Qraft Academy — Learn. Work. Achieve. We manage the future of work and edtech.">
+</head>
 <body>
-   <!-- Navigation -->
-   <div class="navigation">
-    <a href="#"><img src="/images/8.png" alt="Qraft Academy Logo"></a>
-    <nav>
-      <a href="products.html">Our Products</a>
-      <a href="spaces.html">Our Spaces</a>
-      <a href="programs.html">Our Programs</a>
-      <a href="projects.html">Our Projects</a>
-      <a href="media.html">Blogs And Media</a>
-      <a href="about.html">About</a>
-    </nav>
-  </div>
-  <header>
-    <h1>Qraft Academy</h1>
-    <p>Modern Workforce Development for the Future of Work</p>
-    <p><em>Learning, Working, and Achieving</em></p>
-  </header>
+	<header class="site-header">
+		<div class="container">
+			<div class="hero">
+				<div>
+					<div class="emblem" aria-hidden="true">Learn • Work • Achieve</div>
+					<h1 id="slogan">Learn. Work. Achieve.</h1>
+					<p id="vision-statement" class="lead">Through continuous learning and meaningful productivity, we empower every worker to achieve measurable results for global and generational impact.</p>
+					<p id="vision-sub" class="small">We manage the future of work and edtech.</p>
+					<div class="cta">
+						<button class="btn" onclick="location.hash='vision'">Explore Our Vision</button>
+						<button class="btn secondary" onclick="location.hash='achievements'">See Our Impact</button>
+						<button id="contrast-toggle" class="btn secondary" aria-pressed="false">High contrast</button>
+					</div>
+				</div>
+				<aside class="card" aria-label="Vision emblem">
+					<h3 class="small">Our three pillars</h3>
+					<div style="display:grid;grid-template-columns:1fr;gap:8px;">
+						<div><strong>Learn</strong><div class="small">Courses, creation, content</div></div>
+						<div><strong>Work</strong><div class="small">Employability, partnerships</div></div>
+						<div><strong>Achieve</strong><div class="small">Impact, funding, scale</div></div>
+					</div>
+				</aside>
+			</div>
+		</div>
+	</header>
 
-  <section>
-    <h2>About Qraft Academy</h2>
-    <p>Qraft Academy, a program by <strong>Rata Qraft Solutions</strong>, empowers entrepreneurs, freelancers, professionals, and investors with lifelong learning and development. We focus on developing <span class="highlight">mindset, skillset, and toolset</span> for success in the modern world of work.</p>
-    <p>Through Qraft Labs and Qraft Solutions Hub, we deliver content development and training, software development, talent development, funding, and modern workspaces for our community.</p>
-  </section>
+	<main class="container">
+		<section id="vision" aria-labelledby="vision-heading">
+			<h2 id="vision-heading">Vision</h2>
+			<p class="small">Through continuous learning and meaningful productivity, we empower every worker to achieve measurable results for global and generational impact.</p>
+		</section>
 
-  <section>
-    <h2>Our Pillars</h2>
-    <div class="pillars">
-      <div class="card"><strong>Learning</strong><br>Skills Development (Data, Digital, and Design), Leadership & Business, Personal & Professional Growth</div>
-      <div class="card"><strong>Working</strong><br>Qraft Labs for innovation in 8 economies: care, experience, gig, trade, green/circular, digital, creative, and knowledge</div>
-      <div class="card"><strong>Achieving</strong><br>Through the Qraft Solutions Hub, members grow their network, net worth, and net weight via funding, branding, and outsourcing opportunities</div>
-    </div>
-  </section>
+		<section id="products" aria-labelledby="products-heading">
+			<h2 id="products-heading">Products & Programs</h2>
+			<div class="filters">
+				<label for="product-filter" class="small">Filter:</label>
+				<select id="product-filter">
+					<option value="all">All</option>
+					<option value="workmasters">WorkMasters</option>
+					<option value="coursemasters">CourseMasters</option>
+					<option value="capitalmasters">CapitalMasters</option>
+					<option value="techmasters">TechMasters</option>
+				</select>
+			</div>
+			<div id="products-grid" class="grid" role="list"></div>
+		</section>
 
-  <section class="cta-buttons">
-    <h2>Get Involved</h2>
-    <button onclick="window.location.href='https://example.com/apply-skills-course'">Apply as a Learner</button>
-    <button onclick="window.location.href='https://example.com/join-qraft-labs'">Join Qraft Labs as Innovator/Researcher</button>
-    <button onclick="window.location.href='https://example.com/join-hub'">Join Qraft Solutions Hub</button>
-  </section>
+		<section id="goals" aria-labelledby="goals-heading">
+			<h2 id="goals-heading">Goals & Objectives</h2>
+			<div id="goals-grid" class="grid" role="list"></div>
+		</section>
 
-  <section>
-    <h2>Programs at Qraft Academy</h2>
-    <div class="programs">
-      <div class="card">
-        <h3>1. WorkMasters</h3>
-        <p>A work readiness program with Bootcamps, 3-month Internships, and 6-month Apprenticeships across three tracks: Content Creators, Technologists, and Growth Professionals.</p>
-        <p>WorkMasters Bootcamps run weekly, open to the public for UGX 25,000 per class or UGX 500,000 for 6 months. Apprentices and interns attend for free and receive stipends.</p>
-        <button onclick="window.location.href='https://example.com/join-workmasters'">Join WorkMasters Program</button>
-      </div>
-      <div class="card">
-        <h3>2. Future of Work Consortium</h3>
-        <p>A 5-year movement to equip 100M workers in 8 emerging economies through tours, training, and strategic collaborations. Built on 12 Future of Work Principles and 5 Strategic Pillars: Academy, Accelerator, Research & Reports, R&D, and Workforce Capital.</p>
-        <button onclick="window.location.href='https://example.com/join-consortium'">Join Future of Work Consortium</button>
-      </div>
-      <div class="card">
-        <h3>3. 21st Century Investors Program</h3>
-        <p>This program is specifically designed for investors, providing opportunities to explore and invest in high-potential assets and innovative ventures.</p>
-        <ul>
-          <li><strong>Investment Opportunities:</strong> Access to a curated selection of startups and projects with significant growth potential.</li>
-          <li><strong>Market Insights:</strong> Regular updates and reports on market trends and investment opportunities.</li>
-          <li><strong>Networking Events:</strong> Exclusive events to connect with entrepreneurs, industry experts, and fellow investors.</li>
-        </ul>
-        <p><strong>Target Audience:</strong> Individuals or entities looking to invest in high-potential assets and innovative projects.</p>
-        <p><strong>Program Benefits:</strong> Diverse investment options, expert guidance, and rich networking opportunities.</p>
-      </div>
-      <div class="card">
-        <h3>4. Qraft Leaders Program</h3>
-        <p>A program focused on equipping emerging and existing leaders across sectors with the mindset, heartset, and skillset for transformational leadership. Includes executive coaching, sectoral leadership cohorts, and personal mastery intensives.</p>
-      </div>
-      <div class="card">
-        <h3>5. Qraft Creators Program</h3>
-        <p>A program for creatives, storytellers, and media innovators building the future of content and community. Includes a Creator Fellowship, Creator House Residency, and a Content Studio Incubator for community-centered digital content creation.</p>
-      </div>
-    </div>
-  </section>
+		<section id="roadmap" aria-labelledby="roadmap-heading">
+			<h2 id="roadmap-heading">Milestones & Roadmap</h2>
+			<div class="timeline" id="timeline"></div>
+		</section>
 
-  <section>
-    <h2>Qraft Solutions Hub</h2>
-    <p>A network and support center for remote workers, gig workers, and startups with access to modern workspaces, investment programs, and referral opportunities.</p>
-    <p>Oversees prizes and awards for the Future of Work Consortium and supports members in branding, placements, and global opportunities.</p>
-    <p>Offers net worth development through investments and net weight growth by profiling, branding, and linking members to business process outsourcing, gigs, placements, and other opportunities.</p>
-  </section>
+		<section id="achievements" aria-labelledby="achievements-heading">
+			<h2 id="achievements-heading">Achievements & Impact</h2>
+			<div id="kpis" class="kpis"></div>
+			<div class="carousel" aria-live="polite" aria-label="Stories carousel">
+				<!-- stories will go here -->
+			</div>
+		</section>
 
-  <section>
-    <h2>Qraft Labs</h2>
-    <p>Qraft Labs is the research and development engine of Qraft Academy that supports innovation across 8 economic frontiers—care, experience, gig, trade, green/circular, digital, creative, and knowledge economies.</p>
-    <p>It provides a platform for researchers, innovators, and future-focused entrepreneurs to explore ideas, prototype solutions, and collaborate with peers and experts. Qraft Labs promotes experimentation, co-creation, and problem-solving in real-world workforce challenges.</p>
-    <p>Participants benefit from mentorship, collaborative spaces, research resources, and integration into larger innovation programs like the Future of Work Consortium and Qraft Solutions Hub.</p>
-  </section>
+		<section id="community" aria-labelledby="community-heading">
+			<h2 id="community-heading">Community & Programs</h2>
+			<p class="small">Spotlight on the Future of Work Tour and inclusive programs.</p>
+		</section>
 
-  <section>
-    <h2>Future Of Work Economies We Serve</h2>
-    <div class="economies">
-      <div class="card">Care Economy</div>
-      <div class="card">Experience Economy</div>
-      <div class="card">Gig Economy</div>
-      <div class="card">Trade Economy</div>
-      <div class="card">Green/Circular Economy</div>
-      <div class="card">Digital Economy</div>
-      <div class="card">Creative Economy</div>
-      <div class="card">Knowledge Economy</div>
-    </div>
-  </section>
+		<section id="governance" aria-labelledby="governance-heading" class="card">
+			<h3 id="governance-heading">Governance & Data</h3>
+			<p class="small">Last updated: <span id="last-updated">—</span></p>
+			<p class="small">Data provenance and methodology should be clearly listed here.</p>
+		</section>
+	</main>
 
-  <footer>
-    <p>&copy; 2025 Rata Qraft Solutions. All rights reserved.</p>
-  </footer>
+	<footer class="container small" style="padding:24px 24px 60px 24px">
+		<div>© Qraft Academy • <a href="README.md">About this page</a></div>
+	</footer>
+
+	<script src="js/about.js"></script>
+	<script>document.getElementById('last-updated').textContent = new Date().toISOString().split('T')[0];</script>
 </body>
 </html>

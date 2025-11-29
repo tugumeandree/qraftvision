@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TechMasters: The AI-Led Academy</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Lucide icons (use via data-lucide attribute) -->
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.258.0/dist/lucide.min.js"></script>
+</head>
+<body class="tm-root">
+  <div id="app" class="app-container">
+    <!-- Navigation Header -->
+    <header class="tm-header">
+      <div class="tm-nav">
+        <div class="brand">
+          <span class="brand-icon" aria-hidden="true"><i data-lucide="cpu"></i></span>
+          <a class="brand-text" href="/">TechMasters <span class="muted">AI</span></a>
+        </div>
+
+        <nav class="nav-links">
+          <a href="#schools">Schools</a>
+          <a href="#programs">Programs</a>
+          <a href="#edge">AI-Led Edge</a>
+          <a class="apply-btn" href="#apply">Apply</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button id="themeToggle" class="icon-btn" aria-label="Toggle theme"><i data-lucide="moon"></i></button>
+          <button id="mobileMenuBtn" class="icon-btn mobile-only" aria-label="Open menu"><i data-lucide="menu"></i></button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <h1 class="hero-title">The Future is AI-Led. Your Career, Accelerated.</h1>
+          <p class="hero-sub">TechMasters is the world's first AI-Driven academy offering Professional Certificates and Diplomas in next-generation technology.</p>
+          <div class="hero-ctas">
+            <a class="btn-primary" href="#programs">Explore AI Programs</a>
+            <a class="btn-ghost" href="#schools">See Schools</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <!-- Subtle network SVG background -->
+          <svg class="bg-net" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g1" x1="0%" x2="100%" y1="0%" y2="100%">
+                <stop offset="0%" stop-color="#00121a"/>
+                <stop offset="100%" stop-color="#001b2b"/>
+              </linearGradient>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#g1)" />
+            <!-- nodes & links (decorative) -->
+            <g stroke="#00e6ff" stroke-opacity="0.12" stroke-width="1" fill="none">
+              <path d="M30 120 C150 40, 350 200, 560 80"/>
+              <path d="M80 400 C200 320, 420 480, 700 360"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Core Matrix -->
+    <section id="schools" class="section container">
+      <h2 class="section-title">The Core Matrix</h2>
+      <p class="section-sub">Three schools dedicated to engineering, intelligence, and applied design for the AI era.</p>
+
+      <div class="schools-grid">
+        <article class="card school">
+          <div class="icon-wrap"><i data-lucide="server"></i></div>
+          <h3>Digital Technologies</h3>
+          <p class="muted">AI Implementation & Engineering</p>
+        </article>
+
+        <article class="card school">
+          <div class="icon-wrap"><i data-lucide="bar-chart-2"></i></div>
+          <h3>Data & Intelligence</h3>
+          <p class="muted">AI Training & Analytics</p>
+        </article>
+
+        <article class="card school">
+          <div class="icon-wrap"><i data-lucide="pen-tool"></i></div>
+          <h3>Applied Design</h3>
+          <p class="muted">AI-Enhanced Creativity & UX</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Programs Showcase -->
+    <section id="programs" class="section dark-section">
+      <h2 class="section-title light">Flagship Programs</h2>
+      <div class="programs-grid">
+        <article class="program-card">
+          <div class="card-top"><i data-lucide="code"></i></div>
+          <h3>AI Software Engineering</h3>
+          <p class="meta">Certification: National Diploma • Duration: 12-18 Months</p>
+          <p>Deep engineering curriculum focused on production-ready AI systems, MLOps, and scalable architectures.</p>
+          <div class="card-actions"><a class="btn-outline" href="#apply">Apply</a></div>
+        </article>
+
+        <article class="program-card">
+          <div class="card-top"><i data-lucide="database"></i></div>
+          <h3>Advanced Data Science & ML</h3>
+          <p class="meta">Certification: National Diploma • Duration: 12-18 Months</p>
+          <p>Rigorous program emphasizing statistical foundations, model training, and enterprise-grade ML pipelines.</p>
+          <div class="card-actions"><a class="btn-outline" href="#apply">Apply</a></div>
+        </article>
+
+        <article class="program-card">
+          <div class="card-top"><i data-lucide="layers"></i></div>
+          <h3>UI/UX Design for AI Products</h3>
+          <p class="meta">Certification: Professional Certificate • Duration: 9-12 Months</p>
+          <p>Design workflows and interfaces that leverage generative tools, human-in-the-loop systems, and ethical UX for AI.</p>
+          <div class="card-actions"><a class="btn-outline" href="#apply">Apply</a></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Why AI-Led? -->
+    <section id="edge" class="section container">
+      <h2 class="section-title">Why AI-Led?</h2>
+      <div class="features-grid">
+        <div class="feature">
+          <i data-lucide="message-square"></i>
+          <h4>Personalized AI-TA</h4>
+          <p>24/7 AI Teaching Assistant for personalized feedback and query resolution.</p>
+        </div>
+
+        <div class="feature">
+          <i data-lucide="settings"></i>
+          <h4>MLOps Focus</h4>
+          <p>Curriculum includes real-world deployment practices and model lifecycle management.</p>
+        </div>
+
+        <div class="feature">
+          <i data-lucide="sparkles"></i>
+          <h4>Generative Tool Proficiency</h4>
+          <p>Mandatory modules on mastering LLMs and AI art/code generation for professional use.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Teaching Assistant Sandbox -->
+    <section id="aisandbox" class="section dark-section">
+      <h2 class="section-title light">AI Teaching Assistant Sandbox</h2>
+      <div class="sandbox-wrap">
+        <div id="chat" class="chat-window" aria-live="polite">
+          <div id="messages" class="messages">
+            <!-- simulated example conversation (collapsed initially) -->
+          </div>
+          <form id="chatForm" class="chat-form" autocomplete="off">
+            <input id="prompt" class="chat-input" placeholder="Ask your AI-TA a question..." aria-label="Ask your AI-TA a question" />
+            <button id="sendBtn" type="submit" class="btn-primary small">Send</button>
+          </form>
+        </div>
+
+        <aside class="sandbox-help">
+          <h4>Try a sample question</h4>
+          <button class="btn-ghost small" id="sampleBtn">How do I choose between a Certificate and a Diploma?</button>
+          <p class="muted">The sandbox simulates the AI-TA response with concise guidance.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="tm-footer">
+      <div class="container">
+        <small>&copy; 2025 TechMasters / Rata Qraft Solutions Ltd. Powered by Generative AI.</small>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
